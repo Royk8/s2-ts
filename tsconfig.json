@@ -5,6 +5,8 @@
       "declaration": true,
       "outDir": "./dist",
       "strict": false,
+      "noUncheckedIndexedAccess": true,
+      "noEmit": true,
       "baseUrl": ".",
       "paths": {
         "@schemas": ["src/schemas/generated"],
