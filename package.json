@@ -11,7 +11,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rimraf dist",
-    "build": "tsup index.ts --format cjs,esm --dts && tsc-alias",
+    "build": "tsup src/index.ts --format cjs,esm --dts && tsc-alias",
     "lint": "tsc",
     "build-clean": "npm run clean && npm run build"
   },
@@ -29,6 +29,7 @@
     "@types/node": "^20.11.28",
     "rimraf": "^5.0.5",
     "tsc-alias": "^1.8.8",
+    "tsup": "^8.0.2",
     "typescript": "^5.4.2"
   },
   "dependencies": {
