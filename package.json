@@ -1,7 +1,7 @@
 {
   "name": "s2-typescript",
   "version": "0.1.0",
-  "description": "Can log \"hello world\" and \"goodbye world\" to the console!",
+  "description": "S2 standard library for typescript for S2 comunication in a smart grid",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
