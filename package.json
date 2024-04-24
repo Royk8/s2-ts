@@ -13,7 +13,8 @@
     "clean": "rimraf dist",
     "build": "tsup src/index.ts --format cjs,esm --dts && tsc-alias",
     "lint": "tsc",
-    "build-clean": "npm run clean && npm run build"
+    "build-clean": "npm run clean && npm run build",
+    "release": "npm run build-clean && npm publish --access public"
   },
   "repository": {
     "type": "git",
