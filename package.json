@@ -1,8 +1,9 @@
 {
   "name": "s2-typescript",
   "version": "0.1.0",
-  "description": "Can log \"hello world\" and \"goodbye world\" to the console!",
+  "description": "S2 standard library for typescript for S2 comunication in a smart grid",
   "main": "dist/index.js",
+  "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "files": [
     "/dist"
@@ -10,19 +11,25 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rimraf dist",
-    "build": "tsc && tsc-alias",
+    "build": "tsup src/index.ts --format cjs,esm --dts && tsc-alias",
+    "lint": "tsc",
     "build-clean": "npm run clean && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Royk8/s2-ts.git"
   },
   "keywords": [
     "s2",
     "typescript"
   ],
   "author": "",
-  "license": "Apache-2.0",
+  "license": "ISC",
   "devDependencies": {
     "@types/node": "^20.11.28",
     "rimraf": "^5.0.5",
     "tsc-alias": "^1.8.8",
+    "tsup": "^8.0.2",
     "typescript": "^5.4.2"
   },
   "dependencies": {
