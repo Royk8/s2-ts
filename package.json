@@ -33,7 +33,6 @@
     "typescript": "^5.4.2"
   },
   "dependencies": {
-    "pnpm": "^9.0.6",
     "ws": "^8.16.0"
   },
   "optionalDependencies": {
