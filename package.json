@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "Can log \"hello world\" and \"goodbye world\" to the console!",
   "main": "dist/index.js",
+  "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "files": [
     "/dist"
@@ -10,8 +11,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rimraf dist",
-    "build": "tsc && tsc-alias",
+    "build": "tsup index.ts --format cjs,esm --dts && tsc-alias",
+    "lint": "tsc",
     "build-clean": "npm run clean && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Royk8/s2-ts.git"
   },
   "keywords": [
     "s2",
