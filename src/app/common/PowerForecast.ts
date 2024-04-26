@@ -1,15 +1,16 @@
 import { PowerForecast as GenPowerForecast } from "@messages";
 import { PowerForecastElement } from "./PowerForecastElement";
+import { ID } from "@schemas";
 
 interface constructorParameters{
-    message_id: string;
+    message_id: ID;
     start_time: string;
     elements: [PowerForecastElement, ...PowerForecastElement[]];
 }
 
 export class PowerForecast implements GenPowerForecast {
     message_type: "PowerForecast";
-    message_id: string;
+    message_id: ID;
     start_time: string;
     elements: [PowerForecastElement, ...PowerForecastElement[]];
 

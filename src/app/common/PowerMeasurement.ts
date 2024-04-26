@@ -1,15 +1,16 @@
 import { PowerMeasurement as GenPowerMeasurement } from "@messages";
 import { PowerValuesArray } from "./ExtraTypes";
+import { ID } from "@schemas";
 
 interface constructorParameters {
-    message_id: string;
+    message_id: ID;
     measurement_timestamp: string;
     values: PowerValuesArray;
 }
 
 export class PowerMeasurement implements GenPowerMeasurement {
     message_type : "PowerMeasurement";
-    message_id : string;
+    message_id : ID;
     measurement_timestamp: string;
     values : PowerValuesArray
 

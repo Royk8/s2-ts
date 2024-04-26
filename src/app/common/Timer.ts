@@ -1,14 +1,15 @@
 import { Timer as GenTimer} from '@schemas';
 import { Duration, isDuration } from './Duration';
+import { ID } from "@schemas";
 
 interface constructorParameters{
-    id: string;
+    id: ID;
     duration: Duration;
     diagnostic_label?: string;
 }
 
 export class Timer implements GenTimer {
-    id: string;
+    id: ID;
     diagnostic_label?: string;
     duration: Duration;
 

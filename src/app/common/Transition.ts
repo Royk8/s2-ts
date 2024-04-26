@@ -2,11 +2,11 @@ import { Transition as GenTransition, ID } from "@schemas";
 import { Duration, isDuration } from "./Duration";
 
 interface constructorParameters{
-    id: string;
-    from: string;
-    to: string;
-    start_timers: string[];
-    blocking_timers: string[];
+    id: ID;
+    from: ID;
+    to: ID;
+    start_timers: ID[];
+    blocking_timers: ID[];
     transition_costs?: number;
     transition_duration?: Duration;
     abnormal_condition_only: boolean;

@@ -1,14 +1,14 @@
 import { SelectControlType as GenSelectControlType, ControlType } from "@messages";
-
+import { ID } from "@schemas";
 
 interface constructorParameters{
-    message_id: string;
+    message_id: ID;
     control_type: ControlType;
 }
 
 export class SelectControlType implements GenSelectControlType {
     message_type: "SelectControlType";
-    message_id: string;
+    message_id: ID;
     control_type: ControlType;
 
     constructor(constructorParameters: constructorParameters){

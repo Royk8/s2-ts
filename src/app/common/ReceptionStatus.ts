@@ -1,15 +1,16 @@
 import { ReceptionStatus as GenReceptionStatus } from "@messages";
 import { ReceptionStatusValues } from "@messages";
+import { ID } from "@schemas";
 
 interface constructorParameters{
-    subject_message_id: string;
+    subject_message_id: ID;
     status: ReceptionStatusValues;
     diagnostic_label?: string;
 }
 
 export class ReceptionStatus implements GenReceptionStatus {
     message_type: "ReceptionStatus";
-    subject_message_id: string;
+    subject_message_id: ID;
     status: ReceptionStatusValues;
     diagnostic_label?: string;
     

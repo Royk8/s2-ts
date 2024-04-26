@@ -1,14 +1,15 @@
 import { SessionRequest as GenSessionRequest, SessionRequestType } from "@messages";
+import { ID } from "@schemas";
 
 interface constructorParameters{
-    message_id: string;
+    message_id: ID;
     request: SessionRequestType;
     diagnostic_label?: string;
 }
 
 export class SessionRequest implements GenSessionRequest {
     message_type: "SessionRequest";
-    message_id: string;
+    message_id: ID;
     request: SessionRequestType;
     diagnostic_label?: string;
 

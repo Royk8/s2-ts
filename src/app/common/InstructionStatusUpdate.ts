@@ -1,16 +1,17 @@
 import { InstructionStatusUpdate as GenInstructionStatusUpdate, InstructionStatus} from "@messages";
+import { ID } from "@schemas";
 
 interface constructorParameters{
-    message_id: string;
-    instruction_id: string;
+    message_id: ID;
+    instruction_id: ID;
     status_type: InstructionStatus;
     timestamp: string;
 }
 
 export class InstructionStatusUpdate implements GenInstructionStatusUpdate {
     message_type: "InstructionStatusUpdate";
-    message_id: string;
-    instruction_id: string;
+    message_id: ID;
+    instruction_id: ID;
     status_type: InstructionStatus;
     timestamp: string;
 

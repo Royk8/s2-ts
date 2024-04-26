@@ -1,10 +1,11 @@
 import { Role, ControlType, Currency, CommodityQuantity } from "@schemas";
 import { Duration, isDuration } from "./Duration";
 import { ResourceManagerDetails as GenResourceManagerDetails } from "@messages";
+import { ID } from "@schemas";
 
 interface constructorParameters{
-    message_id: string;
-    resource_id: string;
+    message_id: ID;
+    resource_id: ID;
     name?: string;
     roles: [Role] | [Role, Role] | [Role, Role, Role];
     manufacturer?: string;
