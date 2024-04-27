@@ -4,6 +4,7 @@ export { FrbcFillLevelTargetProfile } from './FrbcFillLevelTargetProfile';
 export { FrbcFillLevelTargetProfileElement } from './FrbcFillLevelTargetProfileElement';
 export { FrbcInstruction } from './FrbcInstruction';
 export { FrbcLeakageBehaviour } from './FrbcLeakageBehaviour';
+export { FrbcLeakageBehaviourElement } from './FrbcLeakageBehaviourElement';
 export { FrbcOperationMode } from './FrbcOperationMode';
 export { FrbcStorageDescription } from './FrbcStorageDescription';
 export { FrbcStorageStatus } from './FrbcStorageStatus';

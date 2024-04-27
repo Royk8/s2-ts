@@ -1,5 +1,5 @@
 import { FRBC_FillLevelTargetProfileElement } from "@schemas";
-import { Duration, NumberRange } from "../common";
+import { Duration, validateDuration, NumberRange } from "../common";
 
 interface constructorParameters{
     duration: Duration,
@@ -13,7 +13,12 @@ export class FrbcFillLevelTargetProfileElement implements FRBC_FillLevelTargetPr
     constructor(constructorParameters: constructorParameters){
         const { duration, fill_level_range } = constructorParameters;
         
+        validateDuration(duration);
+        const range = new NumberRange({
+            start_of_range: fill_level_range.start_of_range, 
+            end_of_range: fill_level_range.end_of_range});
+
         this.duration = duration;
-        this.fill_level_range = fill_level_range;
+        this.fill_level_range = range;
     }
 }

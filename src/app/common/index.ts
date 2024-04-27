@@ -14,3 +14,4 @@ export { SessionRequest } from './SessionRequest';
 export { Timer } from './Timer';
 export { Transition } from './Transition';
 export type { Duration } from './Duration';
+export { validateDuration } from './Duration';

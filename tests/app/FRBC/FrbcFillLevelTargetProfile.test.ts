@@ -25,10 +25,10 @@ describe('FrbcFillLevelTargetProfile', () => {
 
         expect(() => {
             
-            const element = {
+            const element = new FrbcFillLevelTargetProfileElement({
                 duration: 3,
                 fill_level_range: { start_of_range: 4, end_of_range: 5 }
-            };
+            });
 
             new FrbcFillLevelTargetProfile({
             message_id: "1",
