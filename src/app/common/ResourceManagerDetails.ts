@@ -1,5 +1,5 @@
 import { Role, ControlType, Currency, CommodityQuantity } from "@schemas";
-import { Duration, isDuration } from "./Duration";
+import { Duration, validateDuration } from "./Duration";
 import { ResourceManagerDetails as GenResourceManagerDetails } from "@messages";
 import { ID } from "@schemas";
 
@@ -38,9 +38,7 @@ export class ResourceManagerDetails implements GenResourceManagerDetails {
     constructor(constructorParameters : constructorParameters){
         const { message_id, resource_id, name, roles, manufacturer, model, serial_number, firmware_version, instruction_processing_delay, available_control_types, currency, provides_forecast, provides_power_measurement_types } = constructorParameters;
 
-        if(!isDuration(instruction_processing_delay)){
-            throw new Error("ResourceManagerDetails: instruction_processing_delay must be of type Duration");
-        }
+        validateDuration(instruction_processing_delay);
 
         this.message_type = "ResourceManagerDetails";
         this.message_id = message_id;

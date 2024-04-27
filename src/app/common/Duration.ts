@@ -1,6 +1,7 @@
 export type Duration = number;
 
-export const isDuration = (value: Duration): value is Duration => {
+export const validateDuration = (value: Duration) : void => {
     //Check if duration is a positive integer
-    return Number.isInteger(value) && value >= 0;
+    if(!(Number.isInteger(value) && value >= 0))
+        throw new Error("duration must be a positive integer");
 }

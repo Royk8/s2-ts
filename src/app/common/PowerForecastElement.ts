@@ -1,5 +1,5 @@
 import type { PowerForecastElement as GenPowerForecastElement } from "@schemas";
-import { isDuration, type Duration } from "./Duration";
+import { validateDuration, type Duration } from "./Duration";
 import { PowerForecastValuesArray } from "./ExtraTypes/";
 
 interface constructorParameters {
@@ -14,9 +14,7 @@ export class PowerForecastElement implements GenPowerForecastElement {
     constructor(constructorParameters: constructorParameters) {
         const { duration, power_values } = constructorParameters;
 
-        if(!isDuration(duration))
-            throw new Error("duration must be a positive integer");
-
+        validateDuration(duration);
         this.duration = duration;
         this.power_values = power_values;
     }

@@ -1,5 +1,5 @@
 import { Timer as GenTimer} from '@schemas';
-import { Duration, isDuration } from './Duration';
+import { Duration, validateDuration } from './Duration';
 import { ID } from "@schemas";
 
 interface constructorParameters{
@@ -16,10 +16,7 @@ export class Timer implements GenTimer {
     constructor(constructorParameters: constructorParameters){
         const { id, duration, diagnostic_label } = constructorParameters;
 
-
-        if(!isDuration(duration)){
-            throw new Error("Timer: duration is not a valid Duration");
-        }
+        validateDuration(duration);      
         
         this.id = id;
         this.duration = duration;

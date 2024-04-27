@@ -1,15 +1,16 @@
-import { Duration, isDuration } from "../../../src/app/common/Duration";
+import { Duration, validateDuration } from "../../../src/app/common/Duration";
 
 describe('Duration', () => {
     it('should create a Duration object', () => {
         const duration : Duration = 10;
 
-        expect(isDuration(duration)).toBe(true);
+        expect(() => validateDuration(duration)).not.toThrow("duration must be a positive integer");
+        //expect(() => validateDuration(duration)).not.toThrow();
     });
 
     it('should return false for negative duration', () => {
         const duration : Duration = -10;
 
-        expect(isDuration(duration)).toBe(false);
+        expect(() => validateDuration(duration)).toThrow("duration must be a positive integer");
     });
 });

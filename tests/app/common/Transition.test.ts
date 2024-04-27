@@ -23,4 +23,35 @@ describe('Transition', () => {
         expect(transition.abnormal_condition_only).toBe(true);
 
     });
+
+    it('should throw an error if the size of the start_timers is greater than 1000', () => {
+        expect(() => {
+            new Transition({
+                id: "1",
+                from: "2",
+                to: "3",
+                start_timers: new Array(1001).fill("4"),
+                blocking_timers: ["5"],
+                transition_costs: 6,
+                transition_duration: 7,
+                abnormal_condition_only: true
+            });
+        }).toThrow('Transition: start_timers must be between 0 and 100 elements');
+    });
+
+    it('should throw an error if the size of the blocking_timers is greater than 1000', () => {
+        expect(() => {
+            new Transition({
+                id: "1",
+                from: "2",
+                to: "3",
+                start_timers: ["4"],
+                blocking_timers: new Array(1001).fill("5"),
+                transition_costs: 6,
+                transition_duration: 7,
+                abnormal_condition_only: true
+            });
+        }).toThrow('Transition: blocking_timers must be between 0 and 100 elements');
+    });
+
 });

@@ -1,5 +1,5 @@
 import { Transition as GenTransition, ID } from "@schemas";
-import { Duration, isDuration } from "./Duration";
+import { Duration, validateDuration } from "./Duration";
 
 interface constructorParameters{
     id: ID;
@@ -25,15 +25,13 @@ export class Transition implements GenTransition {
     constructor(constructorParameters: constructorParameters){
         const { id, from, to, start_timers, blocking_timers, transition_costs, transition_duration, abnormal_condition_only } = constructorParameters;
 
-        if(!isDuration(transition_duration)){
-            throw new Error("Transition: transition_duration is not a valid Duration");
-        }
+        validateDuration(transition_duration);
 
-        if(start_timers.length < 0 || start_timers.length > 100){
+        if(start_timers.length > 100){
             throw new Error("Transition: start_timers must be between 0 and 100 elements");
         }
 
-        if(blocking_timers.length < 0 || blocking_timers.length > 100){
+        if(blocking_timers.length > 100){
             throw new Error("Transition: blocking_timers must be between 0 and 100 elements");
         }
 
