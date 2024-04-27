@@ -1,6 +1,7 @@
 export { FrbcActuatorDescription } from './FrbcActuatorDescription';
 export { FrbcActuatorStatus } from './FrbcActuatorStatus';
 export { FrbcFillLevelTargetProfile } from './FrbcFillLevelTargetProfile';
+export { FrbcFillLevelTargetProfileElement } from './FrbcFillLevelTargetProfileElement';
 export { FrbcInstruction } from './FrbcInstruction';
 export { FrbcLeakageBehaviour } from './FrbcLeakageBehaviour';
 export { FrbcOperationMode } from './FrbcOperationMode';
