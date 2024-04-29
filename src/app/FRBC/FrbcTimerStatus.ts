@@ -1,14 +1,26 @@
 import { FRBC_TimerStatus } from "@messages";
 import { ID } from "@schemas";
+import { Timestamp, validateTimestamp } from "../common";
+
+interface constructorParameters{
+    message_id: ID;
+    timer_id: ID;
+    actuator_id: ID;
+    finished_at: Timestamp;
+}
 
 export class FrbcTimerStatus implements FRBC_TimerStatus {
     message_type: "FRBC.TimerStatus";
     message_id: ID;
     timer_id: ID;
     actuator_id: ID;
-    finished_at: string;
+    finished_at: Timestamp;
 
-    constructor(message_id: ID, timer_id: ID, actuator_id: ID, finished_at: string){
+    constructor(constructorParameters: constructorParameters){
+        const { message_id, timer_id, actuator_id, finished_at } = constructorParameters;
+
+        validateTimestamp(finished_at);
+        
         this.message_type = "FRBC.TimerStatus";
         this.message_id = message_id;
         this.timer_id = timer_id;

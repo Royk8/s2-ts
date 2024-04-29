@@ -8,5 +8,7 @@ export { FrbcLeakageBehaviourElement } from './FrbcLeakageBehaviourElement';
 export { FrbcOperationMode } from './FrbcOperationMode';
 export { FrbcStorageDescription } from './FrbcStorageDescription';
 export { FrbcStorageStatus } from './FrbcStorageStatus';
+export { FrbcSystemDescription } from './FrbcSystemDescription';
 export { FrbcTimerStatus } from './FrbcTimerStatus';
 export { FrbcUsageForecast } from './FrbcUsageForecast';
+export { FrbcUsageForecastElement } from './FrbcUsageForecastElement';

@@ -1,4 +1,4 @@
-import { Handshake } from '../../../src/app/common/Handshake';
+import { Handshake } from '../../../src/app/common';
 
 describe('Handshake', () => {
     it('should create a Handshake object', () => {
