@@ -1,4 +1,5 @@
 import { FrbcLeakageBehaviour, FrbcLeakageBehaviourElement } from '../../../src/app/FRBC';
+import { parseMessage } from '../../../src/app/services';
 
 describe('FrbcLeakageBehaviour', () => {
     it('should create a FrbcLeakageBehaviour object', () => {
@@ -37,6 +38,28 @@ describe('FrbcLeakageBehaviour', () => {
             elements: [element, ... new Array(288).fill(element)]
             
         })}).toThrow("The size of the FRBC_LeakageBehaviourElements array must be between 1 and 288");
+    });
+
+    it('should create a FrbcLeakageBehaviour object after parsing it from a json', () => {
+        const frbcLeakageBehaviour = new FrbcLeakageBehaviour({
+            message_id: "1",
+            valid_from: "2",
+            elements: [{
+                fill_level_range: { start_of_range: 3, end_of_range: 4 },
+                leakage_rate: 5
+            }]
+        });
+
+        const jsonFrbcLeakageBehaviour = JSON.stringify(frbcLeakageBehaviour, null, 2);
+        const parsedFrbcLeakageBehaviour = parseMessage(jsonFrbcLeakageBehaviour);
+
+        expect(parsedFrbcLeakageBehaviour.message_type).toBe("FRBC.LeakageBehaviour");
+        expect(parsedFrbcLeakageBehaviour.message_id).toBe("1");
+        expect(parsedFrbcLeakageBehaviour.valid_from).toBe("2");
+        expect(parsedFrbcLeakageBehaviour.elements).toStrictEqual([{
+            fill_level_range: { start_of_range: 3, end_of_range: 4 },
+            leakage_rate: 5
+        }]);
     });
 
 });
