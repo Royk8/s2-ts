@@ -23,6 +23,7 @@ export class FrbcUsageForecast implements FRBC_UsageForecast {
         }
         validateTimestamp(start_time);
         
+        this.message_type = "FRBC.UsageForecast";
         this.message_id = message_id;
         this.start_time = start_time;
         this.elements = elements;

@@ -13,6 +13,7 @@ const messageTypeToClass = {
     'ReceptionStatus': messages.ReceptionStatus,
     'ResourceManagerDetails': messages.ResourceManagerDetails,
     'RevokeObject': messages.RevokeObject,
+    'SelectControlType': messages.SelectControlType,
     'SessionRequest': messages.SessionRequest,
     'Timer': messages.Timer,
     'Transition': messages.Transition,
