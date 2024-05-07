@@ -3,7 +3,7 @@ import { FRBC_OperationMode, Transition, Timer, ID } from "@schemas";
 import { CommoditiesArray } from "./ExtraTypes";
 
 interface ConstructorParameters{
-    id: ID;
+    id?: ID;
     diagnostic_label?: string;
     supported_commodities: CommoditiesArray;
     operation_modes: [FRBC_OperationMode, ...FRBC_OperationMode[]];

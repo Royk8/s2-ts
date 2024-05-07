@@ -1,6 +1,7 @@
 import { ReceptionStatus as GenReceptionStatus } from "@messages";
 import { ReceptionStatusValues } from "@messages";
 import { ID } from "@schemas";
+import { Uuid } from "../services/Uuid";
 
 interface ConstructorParameters{
     subject_message_id: ID;

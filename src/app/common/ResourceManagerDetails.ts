@@ -2,9 +2,10 @@ import { Role, ControlType, Currency, CommodityQuantity } from "@schemas";
 import { Duration, validateDuration } from "./Duration";
 import { ResourceManagerDetails as GenResourceManagerDetails } from "@messages";
 import { ID } from "@schemas";
+import { Uuid } from "../services/Uuid";
 
 interface ConstructorParameters{
-    message_id: ID;
+    message_id?: ID;
     resource_id: ID;
     name?: string;
     roles: [Role] | [Role, Role] | [Role, Role, Role];
@@ -41,7 +42,7 @@ export class ResourceManagerDetails implements GenResourceManagerDetails {
         validateDuration(instruction_processing_delay);
 
         this.message_type = "ResourceManagerDetails";
-        this.message_id = message_id;
+        this.message_id = Uuid.generate(message_id);
         this.resource_id = resource_id;
         this.name = name;
         this.roles = roles;

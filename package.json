@@ -41,6 +41,8 @@
     "typescript": "^5.4.2"
   },
   "dependencies": {
+    "@types/uuid": "^9.0.8",
+    "uuid": "^9.0.1",
     "ws": "^8.16.0"
   },
   "optionalDependencies": {
