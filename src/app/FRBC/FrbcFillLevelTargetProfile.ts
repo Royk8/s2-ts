@@ -2,7 +2,7 @@ import { FRBC_FillLevelTargetProfile } from "@messages";
 import { FrbcFillLevelTargetProfileElement } from "./";
 import { Timestamp, validateTimestamp } from "../common";
 
-interface constructorParameters{
+interface ConstructorParameters{
     message_id: string;
     start_time: Timestamp;
     elements: [FrbcFillLevelTargetProfileElement, ...FrbcFillLevelTargetProfileElement[]];
@@ -14,7 +14,7 @@ export class FrbcFillLevelTargetProfile implements FRBC_FillLevelTargetProfile {
     start_time: Timestamp;
     elements: [FrbcFillLevelTargetProfileElement, ...FrbcFillLevelTargetProfileElement[]];
 
-    constructor(constructorParameters: constructorParameters){
+    constructor(constructorParameters: ConstructorParameters){
         const { message_id, start_time, elements } = constructorParameters;
 
         if(elements.length > 288){

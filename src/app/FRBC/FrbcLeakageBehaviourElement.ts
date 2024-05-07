@@ -1,7 +1,7 @@
 import { FRBC_LeakageBehaviourElement } from "@schemas";
 import { NumberRange } from "../common";
 
-interface constructorParameters{
+interface ConstructorParameters{
     fill_level_range: NumberRange;
     leakage_rate: number;    
 }
@@ -10,7 +10,7 @@ export class FrbcLeakageBehaviourElement implements FRBC_LeakageBehaviourElement
     fill_level_range: NumberRange;
     leakage_rate: number;
     
-    constructor(constructorParameters: constructorParameters){
+    constructor(constructorParameters: ConstructorParameters){
         const { fill_level_range, leakage_rate } = constructorParameters;
 
         const range = new NumberRange({

@@ -1,7 +1,7 @@
 import { Handshake as GenHandshake, EnergyManagementRole } from "@messages";
 import { ID } from "@schemas";
 
-interface constructorParameters {
+interface ConstructorParameters {
     message_id: ID;
     role: EnergyManagementRole;
     supported_protocol_versions?: [string, ...string[]];
@@ -13,7 +13,7 @@ export class Handshake implements GenHandshake {
     role: EnergyManagementRole;
     supported_protocol_versions?: [string, ...string[]];
 
-    constructor(parameters: constructorParameters){
+    constructor(parameters: ConstructorParameters){
         this.message_type = 'Handshake';
         this.message_id = parameters.message_id;
         this.role = parameters.role;

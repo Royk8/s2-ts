@@ -2,7 +2,7 @@ import { FRBC_ActuatorDescription } from "@schemas";
 import { FRBC_OperationMode, Transition, Timer, ID } from "@schemas";
 import { CommoditiesArray } from "./ExtraTypes";
 
-interface constructorParameters{
+interface ConstructorParameters{
     id: ID;
     diagnostic_label?: string;
     supported_commodities: CommoditiesArray;
@@ -19,7 +19,7 @@ export class FrbcActuatorDescription implements FRBC_ActuatorDescription {
     transitions: Transition[];
     timers: Timer[];
 
-    constructor(constructorParameters: constructorParameters){
+    constructor(constructorParameters: ConstructorParameters){
         const { id, supported_commodities, operation_modes, transitions, timers, diagnostic_label } = constructorParameters;
 
         if(operation_modes.length > 100){

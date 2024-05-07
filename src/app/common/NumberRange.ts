@@ -1,6 +1,6 @@
 import { NumberRange as GenNumberRange } from "@schemas";
 
-interface constructorParameters {
+interface ConstructorParameters {
     start_of_range: number;
     end_of_range: number;
 };
@@ -9,7 +9,7 @@ export class NumberRange implements GenNumberRange {
     start_of_range: number;
     end_of_range: number;
 
-    constructor(constructorParameters: constructorParameters){
+    constructor(constructorParameters: ConstructorParameters){
         const { start_of_range, end_of_range } = constructorParameters;
 
         if(start_of_range > end_of_range){

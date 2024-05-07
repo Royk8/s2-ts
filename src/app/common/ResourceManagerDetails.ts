@@ -3,7 +3,7 @@ import { Duration, validateDuration } from "./Duration";
 import { ResourceManagerDetails as GenResourceManagerDetails } from "@messages";
 import { ID } from "@schemas";
 
-interface constructorParameters{
+interface ConstructorParameters{
     message_id: ID;
     resource_id: ID;
     name?: string;
@@ -35,7 +35,7 @@ export class ResourceManagerDetails implements GenResourceManagerDetails {
     provides_forecast: boolean;
     provides_power_measurement_types: [CommodityQuantity] | [CommodityQuantity, CommodityQuantity] | [CommodityQuantity, CommodityQuantity, CommodityQuantity];
 
-    constructor(constructorParameters : constructorParameters){
+    constructor(constructorParameters : ConstructorParameters){
         const { message_id, resource_id, name, roles, manufacturer, model, serial_number, firmware_version, instruction_processing_delay, available_control_types, currency, provides_forecast, provides_power_measurement_types } = constructorParameters;
 
         validateDuration(instruction_processing_delay);

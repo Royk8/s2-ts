@@ -1,7 +1,7 @@
 import { FRBC_StorageStatus } from "@messages";
 import { ID } from "@schemas";
 
-interface constructorParameters{
+interface ConstructorParameters{
     message_id: ID;
     present_fill_level: number;
 }
@@ -11,7 +11,7 @@ export class FrbcStorageStatus implements FRBC_StorageStatus {
     message_id: ID;
     present_fill_level: number;
 
-    constructor(constructorParameters: constructorParameters){
+    constructor(constructorParameters: ConstructorParameters){
         const { message_id, present_fill_level } = constructorParameters;
 
         this.message_type = "FRBC.StorageStatus";

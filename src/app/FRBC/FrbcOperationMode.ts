@@ -1,7 +1,7 @@
 import { FRBC_OperationMode, FRBC_OperationModeElement } from "@schemas";
 import { ID } from "@schemas";
 
-interface constructorParameters{
+interface ConstructorParameters{
     id: ID;
     elements: [FRBC_OperationModeElement, ...FRBC_OperationModeElement[]];
     abnormal_condition_only: boolean;
@@ -13,7 +13,7 @@ export class FrbcOperationMode implements FRBC_OperationMode {
     elements: [FRBC_OperationModeElement, ...FRBC_OperationModeElement[]];
     abnormal_condition_only: boolean;
 
-    constructor(constructorParameters: constructorParameters){
+    constructor(constructorParameters: ConstructorParameters){
         const { id, elements, abnormal_condition_only } = constructorParameters;
         
         this.id = id;

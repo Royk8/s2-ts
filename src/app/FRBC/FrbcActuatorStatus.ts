@@ -4,7 +4,7 @@ import { validateOperationModeFactor } from "./FrbcOperationModeFactor";
 import type { FrbcOperationModeFactor } from "./FrbcOperationModeFactor";
 import { Timestamp, validateTimestamp } from "../common";
 
-interface constructorParameters{
+interface ConstructorParameters{
     message_id: ID;
     actuator_id: ID;
     active_operation_mode_id: ID;
@@ -22,7 +22,7 @@ export class FrbcActuatorStatus implements FRBC_ActuatorStatus {
     previous_operation_mode_id?: ID;
     transition_timestamp?: Timestamp;
 
-    constructor(constructorParameters: constructorParameters){
+    constructor(constructorParameters: ConstructorParameters){
         const { message_id, actuator_id, active_operation_mode_id, operation_mode_factor, previous_operation_mode_id, transition_timestamp } = constructorParameters;
 
         validateOperationModeFactor(operation_mode_factor);

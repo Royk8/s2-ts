@@ -1,7 +1,7 @@
 import { SessionRequest as GenSessionRequest, SessionRequestType } from "@messages";
 import { ID } from "@schemas";
 
-interface constructorParameters{
+interface ConstructorParameters{
     message_id: ID;
     request: SessionRequestType;
     diagnostic_label?: string;
@@ -13,7 +13,7 @@ export class SessionRequest implements GenSessionRequest {
     request: SessionRequestType;
     diagnostic_label?: string;
 
-    constructor(contractParameters: constructorParameters){
+    constructor(contractParameters: ConstructorParameters){
         const { message_id, request, diagnostic_label } = contractParameters;
 
         this.message_type = "SessionRequest";
