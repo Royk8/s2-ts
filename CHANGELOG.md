@@ -1,5 +1,11 @@
 # s2-typescript
 
+## 0.3.0
+
+### Minor Changes
+
+- 699700b: Test suit ready and running, FRBC and Common ready.
+
 ## 0.2.0
 
 ### Minor Changes
