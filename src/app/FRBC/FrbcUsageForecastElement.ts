@@ -1,7 +1,7 @@
 import { FRBC_UsageForecastElement } from '@schemas';
 import { Duration, validateDuration } from '../common';
 
-interface constructorParameters {
+interface ConstructorParameters {
     duration: Duration;
     usage_rate_upper_limit?: number;
     usage_rate_upper_95PPR?: number;
@@ -22,7 +22,7 @@ export class FrbcUsageForecastElement implements FRBC_UsageForecastElement {
     usage_rate_lower_95PPR?: number;
     usage_rate_lower_limit?: number;
 
-    constructor(constructorParameters: constructorParameters) {
+    constructor(constructorParameters: ConstructorParameters) {
         const {
             duration,
             usage_rate_upper_limit,

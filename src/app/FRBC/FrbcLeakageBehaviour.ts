@@ -3,7 +3,7 @@ import { ID } from "@schemas";
 import { FrbcLeakageBehaviourElement } from "./";
 import { Timestamp, validateTimestamp } from "../common";
 
-interface constructorParameters{
+interface ConstructorParameters{
     message_id: ID;
     valid_from: Timestamp;
     elements: [FrbcLeakageBehaviourElement, ...FrbcLeakageBehaviourElement[]];
@@ -15,7 +15,7 @@ export class FrbcLeakageBehaviour implements FRBC_LeakageBehaviour {
     valid_from: Timestamp;
     elements: [FrbcLeakageBehaviourElement, ...FrbcLeakageBehaviourElement[]];
     
-    constructor(constructorParameters: constructorParameters){
+    constructor(constructorParameters: ConstructorParameters){
         const { message_id, valid_from, elements } = constructorParameters;
 
         if(elements.length > 288){

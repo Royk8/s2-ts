@@ -1,7 +1,7 @@
 import { Transition as GenTransition, ID } from "@schemas";
 import { Duration, validateDuration } from "./Duration";
 
-interface constructorParameters{
+interface ConstructorParameters{
     id: ID;
     from: ID;
     to: ID;
@@ -22,7 +22,7 @@ export class Transition implements GenTransition {
     transition_duration?: Duration;
     abnormal_condition_only: boolean;
 
-    constructor(constructorParameters: constructorParameters){
+    constructor(constructorParameters: ConstructorParameters){
         const { id, from, to, start_timers, blocking_timers, transition_costs, transition_duration, abnormal_condition_only } = constructorParameters;
 
         validateDuration(transition_duration);

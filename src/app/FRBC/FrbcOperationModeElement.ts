@@ -2,7 +2,7 @@ import { FRBC_OperationModeElement } from "@schemas";
 import { NumberRange } from "../common";
 import { PowerRangesArray } from "./ExtraTypes";
 
-interface constructorParameters{
+interface ConstructorParameters{
     fill_level_range: NumberRange;
     fill_rate: NumberRange;
     power_ranges: PowerRangesArray;
@@ -15,7 +15,7 @@ export class FrbcOperationModeElement implements FRBC_OperationModeElement {
     power_ranges: PowerRangesArray;
     running_costs?: NumberRange;
 
-    constructor(constructorParameters: constructorParameters){
+    constructor(constructorParameters: ConstructorParameters){
         const { fill_level_range, fill_rate, power_ranges, running_costs } = constructorParameters;
 
         this.fill_level_range = fill_level_range;

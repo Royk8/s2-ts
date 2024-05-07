@@ -1,6 +1,6 @@
 import type { CommodityQuantity, PowerRange as GenPowerRange } from "@schemas";
 
-interface constructorParameters{
+interface ConstructorParameters{
     start_of_range: number;
     end_of_range: number;
     commodity_quantity: CommodityQuantity;
@@ -11,7 +11,7 @@ export class PowerRange implements GenPowerRange{
     end_of_range: number;
     commodity_quantity: CommodityQuantity;
 
-    constructor(contractorParameters: constructorParameters){
+    constructor(contractorParameters: ConstructorParameters){
         const { start_of_range, end_of_range, commodity_quantity } = contractorParameters;
 
         if(start_of_range > end_of_range){

@@ -4,7 +4,7 @@ import { FrbcStorageDescription } from "./";
 import { Timestamp, validateTimestamp } from "../common";
 import { ActuatorArray } from "./ExtraTypes/ActuatorArray";
 
-interface constructorParameters{
+interface ConstructorParameters{
     message_id: ID;
     valid_from: Timestamp;
     actuators: ActuatorArray;
@@ -18,7 +18,7 @@ export class FrbcSystemDescription implements FRBC_SystemDescription {
     actuators: ActuatorArray;
     storage: FrbcStorageDescription;
 
-    constructor(constructorParameters: constructorParameters){
+    constructor(constructorParameters: ConstructorParameters){
         const { message_id, valid_from, actuators, storage } = constructorParameters;
 
         validateTimestamp(valid_from);

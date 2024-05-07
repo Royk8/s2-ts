@@ -3,7 +3,7 @@ import { ID } from "@schemas";
 import { Timestamp, validateTimestamp } from "../common";
 import { FrbcUsageForecastElement } from "./FrbcUsageForecastElement";
 
-interface constructorParameters{
+interface ConstructorParameters{
     message_id: ID;
     start_time: Timestamp;
     elements: [FrbcUsageForecastElement, ...FrbcUsageForecastElement[]];
@@ -15,7 +15,7 @@ export class FrbcUsageForecast implements FRBC_UsageForecast {
     start_time: Timestamp;
     elements: [FrbcUsageForecastElement, ...FrbcUsageForecastElement[]];
 
-    constructor(constructorParameters: constructorParameters){
+    constructor(constructorParameters: ConstructorParameters){
         const { message_id, start_time, elements } = constructorParameters;
 
         if(elements.length > 288){

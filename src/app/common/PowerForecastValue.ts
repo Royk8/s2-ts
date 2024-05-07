@@ -1,6 +1,6 @@
 import type { CommodityQuantity, PowerForecastValue as PowerForecastValueGen } from "@schemas";
 
-interface constructorParameters {
+interface ConstructorParameters {
     value_upper_limit?: number;
     value_upper_95PPR?: number;
     value_upper_68PPR?: number;
@@ -21,7 +21,7 @@ export class PowerForecastValue implements PowerForecastValueGen {
     value_lower_limit?: number;
     commodity_quantity: CommodityQuantity;
 
-    constructor(constructorParameters: constructorParameters) {
+    constructor(constructorParameters: ConstructorParameters) {
         const {
             value_upper_limit,
             value_upper_95PPR,

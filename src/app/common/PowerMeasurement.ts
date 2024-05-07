@@ -3,7 +3,7 @@ import { PowerValuesArray } from "./ExtraTypes";
 import { ID } from "@schemas";
 import { Timestamp, validateTimestamp } from "./";
 
-interface constructorParameters {
+interface ConstructorParameters {
     message_id: ID;
     measurement_timestamp: Timestamp;
     values: PowerValuesArray;
@@ -15,7 +15,7 @@ export class PowerMeasurement implements GenPowerMeasurement {
     measurement_timestamp: Timestamp;
     values : PowerValuesArray
 
-    constructor(constructorParameters: constructorParameters){
+    constructor(constructorParameters: ConstructorParameters){
         const { message_id, measurement_timestamp, values } = constructorParameters;
 
         validateTimestamp(measurement_timestamp);

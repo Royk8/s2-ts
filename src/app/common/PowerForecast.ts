@@ -3,7 +3,7 @@ import { PowerForecastElement } from "./PowerForecastElement";
 import { ID } from "@schemas";
 import { Timestamp, validateTimestamp } from "./";
 
-interface constructorParameters{
+interface ConstructorParameters{
     message_id: ID;
     start_time: Timestamp;
     elements: [PowerForecastElement, ...PowerForecastElement[]];
@@ -15,7 +15,7 @@ export class PowerForecast implements GenPowerForecast {
     start_time: Timestamp;
     elements: [PowerForecastElement, ...PowerForecastElement[]];
 
-    constructor(constructorParameters: constructorParameters){
+    constructor(constructorParameters: ConstructorParameters){
         const { message_id, start_time, elements } = constructorParameters;
         
         validateTimestamp(start_time);

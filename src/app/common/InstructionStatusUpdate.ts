@@ -2,7 +2,7 @@ import { InstructionStatusUpdate as GenInstructionStatusUpdate, InstructionStatu
 import { ID } from "@schemas";
 import { Timestamp, validateTimestamp } from "./";
 
-interface constructorParameters{
+interface ConstructorParameters{
     message_id: ID;
     instruction_id: ID;
     status_type: InstructionStatus;
@@ -16,7 +16,7 @@ export class InstructionStatusUpdate implements GenInstructionStatusUpdate {
     status_type: InstructionStatus;
     timestamp: Timestamp;
 
-    constructor(constructorParameters: constructorParameters){
+    constructor(constructorParameters: ConstructorParameters){
         const { message_id, instruction_id, status_type, timestamp } = constructorParameters;
 
         validateTimestamp(timestamp);
