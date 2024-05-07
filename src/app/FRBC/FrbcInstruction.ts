@@ -1,5 +1,17 @@
 import { FRBC_Instruction } from "@messages";
 import { ID } from "@schemas";
+import { FrbcOperationModeFactor, validateOperationModeFactor } from "./FrbcOperationModeFactor";
+import { Timestamp, validateTimestamp } from "../common";
+
+interface ConstructorParameters{
+    message_id: ID;
+    id: ID;
+    actuator_id: ID;
+    operation_mode: ID;
+    operation_mode_factor: FrbcOperationModeFactor;
+    execution_time: Timestamp;
+    abnormal_condition: boolean;
+}
 
 export class FrbcInstruction implements FRBC_Instruction {
     message_type: "FRBC.Instruction";
@@ -7,11 +19,17 @@ export class FrbcInstruction implements FRBC_Instruction {
     id: ID;
     actuator_id: ID;
     operation_mode: ID;
-    operation_mode_factor: number;
-    execution_time: string;
+    operation_mode_factor: FrbcOperationModeFactor;
+    execution_time: Timestamp;
     abnormal_condition: boolean;
 
-    constructor(message_id: ID, id: ID, actuator_id: ID, operation_mode: ID, operation_mode_factor: number, execution_time: string, abnormal_condition: boolean){
+    constructor(constructorParameters: ConstructorParameters){
+        const { message_id, id, actuator_id, operation_mode, operation_mode_factor, execution_time, abnormal_condition } = constructorParameters;
+
+        validateOperationModeFactor(operation_mode_factor);
+        validateTimestamp(execution_time);
+        
+        this.message_type = "FRBC.Instruction";
         this.message_id = message_id;
         this.id = id;
         this.actuator_id = actuator_id;

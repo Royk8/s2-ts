@@ -13,3 +13,7 @@ export { SelectControlType } from './SelectControlType';
 export { SessionRequest } from './SessionRequest';
 export { Timer } from './Timer';
 export { Transition } from './Transition';
+export type { Duration } from './Duration';
+export { validateDuration } from './Duration';
+export type { Timestamp } from './Timestamp';
+export { validateTimestamp } from './Timestamp';

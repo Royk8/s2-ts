@@ -1,5 +1,16 @@
 import type { CommodityQuantity, PowerForecastValue as PowerForecastValueGen } from "@schemas";
 
+interface ConstructorParameters {
+    value_upper_limit?: number;
+    value_upper_95PPR?: number;
+    value_upper_68PPR?: number;
+    value_lower_68PPR?: number;
+    value_lower_95PPR?: number;
+    value_lower_limit?: number;
+    value_expected: number;
+    commodity_quantity: CommodityQuantity;
+}
+
 export class PowerForecastValue implements PowerForecastValueGen {
     value_upper_limit?: number;
     value_upper_95PPR?: number;
@@ -10,16 +21,18 @@ export class PowerForecastValue implements PowerForecastValueGen {
     value_lower_limit?: number;
     commodity_quantity: CommodityQuantity;
 
-    constructor(
-        value_expected: number,
-        commodity_quantity: CommodityQuantity,
-        value_upper_limit?: number,
-        value_upper_95PPR?: number,
-        value_upper_68PPR?: number,
-        value_lower_68PPR?: number,
-        value_lower_95PPR?: number,
-        value_lower_limit?: number,
-    ) {
+    constructor(constructorParameters: ConstructorParameters) {
+        const {
+            value_upper_limit,
+            value_upper_95PPR,
+            value_upper_68PPR,
+            value_lower_68PPR,
+            value_lower_95PPR,
+            value_lower_limit,
+            value_expected,
+            commodity_quantity
+        } = constructorParameters;
+
         this.value_upper_limit = value_upper_limit;
         this.value_upper_95PPR = value_upper_95PPR;
         this.value_upper_68PPR = value_upper_68PPR;
