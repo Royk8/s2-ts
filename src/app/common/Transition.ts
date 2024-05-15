@@ -1,8 +1,9 @@
 import { Transition as GenTransition, ID } from "@schemas";
 import { Duration, validateDuration } from "./Duration";
+import { Uuid } from "../services/Uuid";
 
 interface ConstructorParameters{
-    id: ID;
+    id?: ID;
     from: ID;
     to: ID;
     start_timers: ID[];
@@ -35,7 +36,7 @@ export class Transition implements GenTransition {
             throw new Error("Transition: blocking_timers must be between 0 and 100 elements");
         }
 
-        this.id = id;
+        this.id = Uuid.generate(id);
         this.from = from;
         this.to = to;
         this.start_timers = start_timers;

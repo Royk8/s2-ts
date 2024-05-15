@@ -2,9 +2,10 @@ import { FRBC_LeakageBehaviour } from "@messages";
 import { ID } from "@schemas";
 import { FrbcLeakageBehaviourElement } from "./";
 import { Timestamp, validateTimestamp } from "../common";
+import { Uuid } from "../services/Uuid";
 
 interface ConstructorParameters{
-    message_id: ID;
+    message_id?: ID;
     valid_from: Timestamp;
     elements: [FrbcLeakageBehaviourElement, ...FrbcLeakageBehaviourElement[]];
 }
@@ -24,7 +25,7 @@ export class FrbcLeakageBehaviour implements FRBC_LeakageBehaviour {
         validateTimestamp(valid_from);
 
         this.message_type = "FRBC.LeakageBehaviour";
-        this.message_id = message_id;
+        this.message_id = Uuid.generate(message_id);
         this.valid_from = valid_from;
         this.elements = elements;
     }

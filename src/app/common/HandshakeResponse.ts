@@ -1,8 +1,9 @@
 import { HandshakeResponse as GenHandshakeResponse } from "@messages";
 import { ID } from "@schemas";
+import { Uuid } from "../services/Uuid";
 
 interface ConstructorParameters {
-    message_id: ID;
+    message_id?: ID;
     selected_protocol_version: string;
 };
 
@@ -13,7 +14,7 @@ export class HandshakeResponse implements GenHandshakeResponse {
 
     constructor(parameters: ConstructorParameters){
         this.message_type = "HandshakeResponse";
-        this.message_id = parameters.message_id;
+        this.message_id = Uuid.generate(parameters.message_id);
         this.selected_protocol_version = parameters.selected_protocol_version;
     }
 }

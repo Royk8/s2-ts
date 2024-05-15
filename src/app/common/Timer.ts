@@ -1,9 +1,10 @@
 import { Timer as GenTimer} from '@schemas';
 import { Duration, validateDuration } from './Duration';
 import { ID } from "@schemas";
+import { Uuid } from '../services/Uuid';
 
 interface ConstructorParameters{
-    id: ID;
+    id?: ID;
     duration: Duration;
     diagnostic_label?: string;
 }
@@ -18,7 +19,7 @@ export class Timer implements GenTimer {
 
         validateDuration(duration);      
         
-        this.id = id;
+        this.id = Uuid.generate(id);
         this.duration = duration;
         this.diagnostic_label = diagnostic_label;
     }

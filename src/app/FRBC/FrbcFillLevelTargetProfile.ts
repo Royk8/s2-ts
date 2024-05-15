@@ -1,9 +1,10 @@
 import { FRBC_FillLevelTargetProfile } from "@messages";
 import { FrbcFillLevelTargetProfileElement } from "./";
 import { Timestamp, validateTimestamp } from "../common";
+import { Uuid } from "../services/Uuid";
 
 interface ConstructorParameters{
-    message_id: string;
+    message_id?: string;
     start_time: Timestamp;
     elements: [FrbcFillLevelTargetProfileElement, ...FrbcFillLevelTargetProfileElement[]];
 }
@@ -24,7 +25,7 @@ export class FrbcFillLevelTargetProfile implements FRBC_FillLevelTargetProfile {
         validateTimestamp(start_time);
 
         this.message_type = "FRBC.FillLevelTargetProfile";
-        this.message_id = message_id;
+        this.message_id = Uuid.generate(message_id);
         this.start_time = start_time;
         this.elements = elements;
     }

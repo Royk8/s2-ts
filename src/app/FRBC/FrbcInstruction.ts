@@ -2,9 +2,10 @@ import { FRBC_Instruction } from "@messages";
 import { ID } from "@schemas";
 import { FrbcOperationModeFactor, validateOperationModeFactor } from "./FrbcOperationModeFactor";
 import { Timestamp, validateTimestamp } from "../common";
+import { Uuid } from "../services/Uuid";
 
 interface ConstructorParameters{
-    message_id: ID;
+    message_id?: ID;
     id: ID;
     actuator_id: ID;
     operation_mode: ID;
@@ -30,7 +31,7 @@ export class FrbcInstruction implements FRBC_Instruction {
         validateTimestamp(execution_time);
         
         this.message_type = "FRBC.Instruction";
-        this.message_id = message_id;
+        this.message_id = Uuid.generate(message_id);
         this.id = id;
         this.actuator_id = actuator_id;
         this.operation_mode = operation_mode;

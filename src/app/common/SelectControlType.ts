@@ -1,8 +1,9 @@
 import { SelectControlType as GenSelectControlType, ControlType } from "@messages";
 import { ID } from "@schemas";
+import { Uuid } from "../services/Uuid";
 
 interface ConstructorParameters{
-    message_id: ID;
+    message_id?: ID;
     control_type: ControlType;
 }
 
@@ -15,7 +16,7 @@ export class SelectControlType implements GenSelectControlType {
         const { message_id, control_type } = constructorParameters;
 
         this.message_type = "SelectControlType";
-        this.message_id = message_id;
+        this.message_id = Uuid.generate(message_id);
         this.control_type = control_type;
     }
 }
