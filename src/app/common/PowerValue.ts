@@ -1,5 +1,4 @@
-import { PowerValue as GenPowerValue } from "@schemas";
-import { CommodityQuantity } from "@schemas";
+import { PowerValue as GenPowerValue, CommodityQuantity } from "@schemas";
 
 interface ConstructorParameters {
     commodity_quantity: CommodityQuantity;

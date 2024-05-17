@@ -1,7 +1,6 @@
-import { Role, ControlType, Currency, CommodityQuantity } from "@schemas";
-import { Duration, validateDuration } from "./Duration";
+import { Role, ControlType, Currency, CommodityQuantity, ID } from "@schemas";
+import { Duration, validateDuration } from ".";
 import { ResourceManagerDetails as GenResourceManagerDetails } from "@messages";
-import { ID } from "@schemas";
 import { Uuid } from "../services/Uuid";
 
 interface ConstructorParameters{

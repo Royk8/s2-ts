@@ -1,7 +1,6 @@
 import { FRBC_ActuatorStatus } from "@messages";
 import { ID } from "@schemas";
-import { validateOperationModeFactor } from "./FrbcOperationModeFactor";
-import type { FrbcOperationModeFactor } from "./FrbcOperationModeFactor";
+import { validateOperationModeFactor, FrbcOperationModeFactor } from "./FrbcOperationModeFactor";
 import { Timestamp, validateTimestamp } from "../common";
 import { Uuid } from "../services/Uuid";
 

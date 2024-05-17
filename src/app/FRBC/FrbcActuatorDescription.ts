@@ -1,5 +1,4 @@
-import { FRBC_ActuatorDescription } from "@schemas";
-import { FRBC_OperationMode, Transition, Timer, ID } from "@schemas";
+import { FRBC_ActuatorDescription, FRBC_OperationMode, Transition, Timer, ID } from "@schemas";
 import { CommoditiesArray } from "../common/ExtraTypes";
 
 interface ConstructorParameters{

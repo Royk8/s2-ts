@@ -1,5 +1,4 @@
-import { FRBC_OperationMode, FRBC_OperationModeElement } from "@schemas";
-import { ID } from "@schemas";
+import { FRBC_OperationMode, FRBC_OperationModeElement, ID } from "@schemas";
 import { Uuid } from "../services/Uuid";
 
 interface ConstructorParameters{

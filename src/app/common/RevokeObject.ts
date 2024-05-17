@@ -1,5 +1,4 @@
-import { RevokeObject as GenRevokeObject } from "@messages";
-import { RevokableObjects } from "@messages";
+import { RevokeObject as GenRevokeObject, RevokableObjects } from "@messages";
 import { ID } from "@schemas";
 import { Uuid } from "../services/Uuid";
 

@@ -1,6 +1,5 @@
-import { Timer as GenTimer} from '@schemas';
+import { Timer as GenTimer, ID} from '@schemas';
 import { Duration, validateDuration } from './Duration';
-import { ID } from "@schemas";
 import { Uuid } from '../services/Uuid';
 
 interface ConstructorParameters{
