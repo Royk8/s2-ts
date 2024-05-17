@@ -1,8 +1,9 @@
 import { SessionRequest as GenSessionRequest, SessionRequestType } from "@messages";
 import { ID } from "@schemas";
+import { Uuid } from "../services/Uuid";
 
 interface ConstructorParameters{
-    message_id: ID;
+    message_id?: ID;
     request: SessionRequestType;
     diagnostic_label?: string;
 }
@@ -13,11 +14,10 @@ export class SessionRequest implements GenSessionRequest {
     request: SessionRequestType;
     diagnostic_label?: string;
 
-    constructor(contractParameters: ConstructorParameters){
-        const { message_id, request, diagnostic_label } = contractParameters;
+    constructor({ message_id, request, diagnostic_label }: ConstructorParameters){
 
         this.message_type = "SessionRequest";
-        this.message_id = message_id;
+        this.message_id = Uuid.generate(message_id);
         this.request = request;
         this.diagnostic_label = diagnostic_label;
     }

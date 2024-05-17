@@ -1,6 +1,6 @@
 import type { PowerForecastElement as GenPowerForecastElement } from "@schemas";
 import { validateDuration, type Duration } from "./Duration";
-import { PowerForecastValuesArray } from "./ExtraTypes/";
+import { PowerForecastValuesArray } from "./ExtraTypes";
 
 interface ConstructorParameters {
     duration: Duration;
@@ -11,8 +11,7 @@ export class PowerForecastElement implements GenPowerForecastElement {
     duration: Duration;
     power_values: PowerForecastValuesArray;
 
-    constructor(constructorParameters: ConstructorParameters) {
-        const { duration, power_values } = constructorParameters;
+    constructor({ duration, power_values } : ConstructorParameters) {
 
         validateDuration(duration);
         this.duration = duration;

@@ -1,5 +1,4 @@
-import { ReceptionStatus as GenReceptionStatus } from "@messages";
-import { ReceptionStatusValues } from "@messages";
+import { ReceptionStatus as GenReceptionStatus, ReceptionStatusValues } from "@messages";
 import { ID } from "@schemas";
 
 interface ConstructorParameters{
@@ -14,8 +13,7 @@ export class ReceptionStatus implements GenReceptionStatus {
     status: ReceptionStatusValues;
     diagnostic_label?: string;
     
-    constructor(contractorParameters: ConstructorParameters){
-        const { subject_message_id, status, diagnostic_label } = contractorParameters;
+    constructor({ subject_message_id, status, diagnostic_label }: ConstructorParameters){
 
         this.message_type = "ReceptionStatus";
         this.subject_message_id = subject_message_id;

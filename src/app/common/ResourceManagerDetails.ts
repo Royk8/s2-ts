@@ -1,10 +1,10 @@
-import { Role, ControlType, Currency, CommodityQuantity } from "@schemas";
-import { Duration, validateDuration } from "./Duration";
+import { Role, ControlType, Currency, CommodityQuantity, ID } from "@schemas";
+import { Duration, validateDuration } from ".";
 import { ResourceManagerDetails as GenResourceManagerDetails } from "@messages";
-import { ID } from "@schemas";
+import { Uuid } from "../services/Uuid";
 
 interface ConstructorParameters{
-    message_id: ID;
+    message_id?: ID;
     resource_id: ID;
     name?: string;
     roles: [Role] | [Role, Role] | [Role, Role, Role];
@@ -35,13 +35,12 @@ export class ResourceManagerDetails implements GenResourceManagerDetails {
     provides_forecast: boolean;
     provides_power_measurement_types: [CommodityQuantity] | [CommodityQuantity, CommodityQuantity] | [CommodityQuantity, CommodityQuantity, CommodityQuantity];
 
-    constructor(constructorParameters : ConstructorParameters){
-        const { message_id, resource_id, name, roles, manufacturer, model, serial_number, firmware_version, instruction_processing_delay, available_control_types, currency, provides_forecast, provides_power_measurement_types } = constructorParameters;
+    constructor({ message_id, resource_id, name, roles, manufacturer, model, serial_number, firmware_version, instruction_processing_delay, available_control_types, currency, provides_forecast, provides_power_measurement_types } : ConstructorParameters){
 
         validateDuration(instruction_processing_delay);
 
         this.message_type = "ResourceManagerDetails";
-        this.message_id = message_id;
+        this.message_id = Uuid.generate(message_id);
         this.resource_id = resource_id;
         this.name = name;
         this.roles = roles;

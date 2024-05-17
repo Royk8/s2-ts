@@ -22,17 +22,16 @@ export class FrbcUsageForecastElement implements FRBC_UsageForecastElement {
     usage_rate_lower_95PPR?: number;
     usage_rate_lower_limit?: number;
 
-    constructor(constructorParameters: ConstructorParameters) {
-        const {
-            duration,
-            usage_rate_upper_limit,
-            usage_rate_upper_95PPR,
-            usage_rate_upper_68PPR,
-            usage_rate_expected,
-            usage_rate_lower_68PPR,
-            usage_rate_lower_95PPR,
-            usage_rate_lower_limit,
-        } = constructorParameters;
+    constructor({
+        duration,
+        usage_rate_upper_limit,
+        usage_rate_upper_95PPR,
+        usage_rate_upper_68PPR,
+        usage_rate_expected,
+        usage_rate_lower_68PPR,
+        usage_rate_lower_95PPR,
+        usage_rate_lower_limit,
+    }: ConstructorParameters) {
 
         validateDuration(duration);
 

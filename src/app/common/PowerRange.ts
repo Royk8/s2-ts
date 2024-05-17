@@ -11,8 +11,7 @@ export class PowerRange implements GenPowerRange{
     end_of_range: number;
     commodity_quantity: CommodityQuantity;
 
-    constructor(contractorParameters: ConstructorParameters){
-        const { start_of_range, end_of_range, commodity_quantity } = contractorParameters;
+    constructor({ start_of_range, end_of_range, commodity_quantity }: ConstructorParameters){
 
         if(start_of_range > end_of_range){
             throw new Error("start_of_range must be less than or equal to end_of_range");

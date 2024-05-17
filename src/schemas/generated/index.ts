@@ -24,3 +24,25 @@ export type { FRBC_OperationMode } from './FRBC.OperationMode';
 export type { FRBC_OperationModeElement } from './FRBC.OperationModeElement';
 export type { FRBC_StorageDescription } from './FRBC.StorageDescription';
 export type { FRBC_UsageForecastElement } from './FRBC.UsageForecastElement';
+
+//DDBC
+export type { DDBC_ActuatorDescription } from './DDBC.ActuatorDescription';
+export type { DDBC_AverageDemandRateForecastElement } from './DDBC.AverageDemandRateForecastElement';
+export type { DDBC_OperationMode } from './DDBC.OperationMode';
+
+//OMBC
+export type { OMBC_OperationMode } from './OMBC.OperationMode';
+
+//PEBC
+export type { PEBC_AllowedLimitRange } from './PEBC.AllowedLimitRange';
+export type { PEBC_PowerEnvelope } from './PEBC.PowerEnvelope';
+export type { PEBC_PowerEnvelopeConsequenceType } from './PEBC.PowerEnvelopeConsequenceType';
+export type { PEBC_PowerEnvelopeElement } from './PEBC.PowerEnvelopeElement';
+export type { PEBC_PowerEnvelopeLimitType } from './PEBC.PowerEnvelopeLimitType';
+
+//PPBC
+export type { PPBC_PowerSequence } from './PPBC.PowerSequence';
+export type { PPBC_PowerSequenceContainer } from './PPBC.PowerSequenceContainer';
+export type { PPBC_PowerSequenceContainerStatus } from './PPBC.PowerSequenceContainerStatus';
+export type { PPBC_PowerSequenceElement } from './PPBC.PowerSequenceElement';
+export type { PPBC_PowerSequenceStatus } from './PPBC.PowerSequenceStatus';

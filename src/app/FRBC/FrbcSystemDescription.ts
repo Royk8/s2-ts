@@ -3,9 +3,10 @@ import { ID } from "@schemas";
 import { FrbcStorageDescription } from "./";
 import { Timestamp, validateTimestamp } from "../common";
 import { ActuatorArray } from "./ExtraTypes/ActuatorArray";
+import { Uuid } from "../services/Uuid";
 
 interface ConstructorParameters{
-    message_id: ID;
+    message_id?: ID;
     valid_from: Timestamp;
     actuators: ActuatorArray;
     storage: FrbcStorageDescription;
@@ -18,13 +19,12 @@ export class FrbcSystemDescription implements FRBC_SystemDescription {
     actuators: ActuatorArray;
     storage: FrbcStorageDescription;
 
-    constructor(constructorParameters: ConstructorParameters){
-        const { message_id, valid_from, actuators, storage } = constructorParameters;
+    constructor({ message_id, valid_from, actuators, storage }: ConstructorParameters){
 
         validateTimestamp(valid_from);
         
         this.message_type = "FRBC.SystemDescription";
-        this.message_id = message_id;
+        this.message_id = Uuid.generate(message_id);
         this.valid_from = valid_from;
         this.actuators = actuators;
         this.storage = storage;
