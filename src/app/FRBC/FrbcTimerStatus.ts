@@ -17,8 +17,7 @@ export class FrbcTimerStatus implements FRBC_TimerStatus {
     actuator_id: ID;
     finished_at: Timestamp;
 
-    constructor(constructorParameters: ConstructorParameters){
-        const { message_id, timer_id, actuator_id, finished_at } = constructorParameters;
+    constructor({ message_id, timer_id, actuator_id, finished_at }: ConstructorParameters){
 
         validateTimestamp(finished_at);
         

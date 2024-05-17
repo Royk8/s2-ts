@@ -1,6 +1,5 @@
-import { Timer as GenTimer} from '@schemas';
+import { Timer as GenTimer, ID} from '@schemas';
 import { Duration, validateDuration } from './Duration';
-import { ID } from "@schemas";
 import { Uuid } from '../services/Uuid';
 
 interface ConstructorParameters{
@@ -14,8 +13,7 @@ export class Timer implements GenTimer {
     diagnostic_label?: string;
     duration: Duration;
 
-    constructor(constructorParameters: ConstructorParameters){
-        const { id, duration, diagnostic_label } = constructorParameters;
+    constructor({ id, duration, diagnostic_label }: ConstructorParameters){
 
         validateDuration(duration);      
         

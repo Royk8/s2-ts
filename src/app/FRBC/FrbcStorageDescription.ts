@@ -18,8 +18,7 @@ export class FrbcStorageDescription implements FRBC_StorageDescription {
     provides_usage_forecast: boolean;
     fill_level_range: NumberRange;
 
-    constructor(constructorParameters: ConstructorParameters){
-        const { diagnostic_label, fill_level_label, provides_leakage_behaviour, provides_fill_level_target_profile, provides_usage_forecast, fill_level_range } = constructorParameters;
+    constructor({ diagnostic_label, fill_level_label, provides_leakage_behaviour, provides_fill_level_target_profile, provides_usage_forecast, fill_level_range }: ConstructorParameters){
 
         const range = new NumberRange({
             start_of_range: fill_level_range.start_of_range, 

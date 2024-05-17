@@ -16,8 +16,7 @@ export class PowerForecast implements GenPowerForecast {
     start_time: Timestamp;
     elements: [PowerForecastElement, ...PowerForecastElement[]];
 
-    constructor(constructorParameters: ConstructorParameters){
-        const { message_id, start_time, elements } = constructorParameters;
+    constructor({ message_id, start_time, elements }: ConstructorParameters){
         
         validateTimestamp(start_time);
 

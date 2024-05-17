@@ -10,8 +10,7 @@ export class FrbcLeakageBehaviourElement implements FRBC_LeakageBehaviourElement
     fill_level_range: NumberRange;
     leakage_rate: number;
     
-    constructor(constructorParameters: ConstructorParameters){
-        const { fill_level_range, leakage_rate } = constructorParameters;
+    constructor({ fill_level_range, leakage_rate }: ConstructorParameters){
 
         const range = new NumberRange({
             start_of_range: fill_level_range.start_of_range, 

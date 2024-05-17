@@ -17,8 +17,7 @@ export class InstructionStatusUpdate implements GenInstructionStatusUpdate {
     status_type: InstructionStatus;
     timestamp: Timestamp;
 
-    constructor(constructorParameters: ConstructorParameters){
-        const { message_id, instruction_id, status_type, timestamp } = constructorParameters;
+    constructor({ message_id, instruction_id, status_type, timestamp }: ConstructorParameters){
 
         validateTimestamp(timestamp);
 

@@ -12,8 +12,7 @@ export class FrbcStorageStatus implements FRBC_StorageStatus {
     message_id: ID;
     present_fill_level: number;
 
-    constructor(constructorParameters: ConstructorParameters){
-        const { message_id, present_fill_level } = constructorParameters;
+    constructor({ message_id, present_fill_level }: ConstructorParameters){
 
         this.message_type = "FRBC.StorageStatus";
         this.message_id = Uuid.generate(message_id);

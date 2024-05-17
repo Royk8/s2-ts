@@ -23,8 +23,7 @@ export class Transition implements GenTransition {
     transition_duration?: Duration;
     abnormal_condition_only: boolean;
 
-    constructor(constructorParameters: ConstructorParameters){
-        const { id, from, to, start_timers, blocking_timers, transition_costs, transition_duration, abnormal_condition_only } = constructorParameters;
+    constructor({ id, from, to, start_timers, blocking_timers, transition_costs, transition_duration, abnormal_condition_only }: ConstructorParameters){
 
         validateDuration(transition_duration);
 

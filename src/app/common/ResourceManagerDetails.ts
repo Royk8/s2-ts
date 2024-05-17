@@ -1,7 +1,6 @@
-import { Role, ControlType, Currency, CommodityQuantity } from "@schemas";
-import { Duration, validateDuration } from "./Duration";
+import { Role, ControlType, Currency, CommodityQuantity, ID } from "@schemas";
+import { Duration, validateDuration } from ".";
 import { ResourceManagerDetails as GenResourceManagerDetails } from "@messages";
-import { ID } from "@schemas";
 import { Uuid } from "../services/Uuid";
 
 interface ConstructorParameters{
@@ -36,8 +35,7 @@ export class ResourceManagerDetails implements GenResourceManagerDetails {
     provides_forecast: boolean;
     provides_power_measurement_types: [CommodityQuantity] | [CommodityQuantity, CommodityQuantity] | [CommodityQuantity, CommodityQuantity, CommodityQuantity];
 
-    constructor(constructorParameters : ConstructorParameters){
-        const { message_id, resource_id, name, roles, manufacturer, model, serial_number, firmware_version, instruction_processing_delay, available_control_types, currency, provides_forecast, provides_power_measurement_types } = constructorParameters;
+    constructor({ message_id, resource_id, name, roles, manufacturer, model, serial_number, firmware_version, instruction_processing_delay, available_control_types, currency, provides_forecast, provides_power_measurement_types } : ConstructorParameters){
 
         validateDuration(instruction_processing_delay);
 

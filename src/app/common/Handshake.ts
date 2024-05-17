@@ -14,10 +14,10 @@ export class Handshake implements GenHandshake {
     role: EnergyManagementRole;
     supported_protocol_versions?: [string, ...string[]];
 
-    constructor(parameters: ConstructorParameters){
+    constructor( { message_id, role, supported_protocol_versions }: ConstructorParameters ) {
         this.message_type = 'Handshake';
-        this.message_id = Uuid.generate(parameters.message_id);
-        this.role = parameters.role;
-        this.supported_protocol_versions = parameters.supported_protocol_versions;
+        this.message_id = Uuid.generate(message_id);
+        this.role = role;
+        this.supported_protocol_versions = supported_protocol_versions;
     }
 }

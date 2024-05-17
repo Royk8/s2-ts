@@ -1,5 +1,4 @@
-import { RevokeObject as GenRevokeObject } from "@messages";
-import { RevokableObjects } from "@messages";
+import { RevokeObject as GenRevokeObject, RevokableObjects } from "@messages";
 import { ID } from "@schemas";
 import { Uuid } from "../services/Uuid";
 
@@ -15,8 +14,7 @@ export class RevokeObject implements GenRevokeObject {
     object_type: RevokableObjects;
     object_id: ID;
     
-    constructor(constructorParameters: ConstructorParameters){
-        const { message_id, object_type, object_id } = constructorParameters;
+    constructor({ message_id, object_type, object_id }: ConstructorParameters){
 
         this.message_type = "RevokeObject";
         this.message_id = Uuid.generate(message_id);

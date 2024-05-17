@@ -1,4 +1,5 @@
 import { FrbcStorageDescription } from "../../../src/app/FRBC";
+import { NumberRange } from "../../../src/app/common";
 
 describe('FrbcStorageDescription', () => {
     it('should create a FrbcStorageDescription object', () => {
@@ -9,7 +10,7 @@ describe('FrbcStorageDescription', () => {
             provides_fill_level_target_profile: true,
             provides_leakage_behaviour: true,
             provides_usage_forecast: true,
-            fill_level_range: { start_of_range: 3, end_of_range: 4 }
+            fill_level_range: new NumberRange({ start_of_range: 3, end_of_range: 4 })
         });
 
         expect(frbcStorageDescription.diagnostic_label).toBe("1");

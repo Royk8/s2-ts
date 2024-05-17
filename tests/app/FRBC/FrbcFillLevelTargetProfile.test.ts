@@ -1,4 +1,5 @@
 import { FrbcFillLevelTargetProfile, FrbcFillLevelTargetProfileElement } from '../../../src/app/FRBC';
+import { NumberRange } from '../../../src/app/common';
 import { parseMessage } from '../../../src/app/services';
 
 describe('FrbcFillLevelTargetProfile', () => {
@@ -7,19 +8,19 @@ describe('FrbcFillLevelTargetProfile', () => {
         const frbcFillLevelTargetProfile = new FrbcFillLevelTargetProfile({
             message_id: "1",
             start_time: "2",
-            elements: [{
+            elements: [new FrbcFillLevelTargetProfileElement( {
                 duration: 3,
-                fill_level_range: { start_of_range: 4, end_of_range: 5 }
-            }]
+                fill_level_range: new NumberRange({ start_of_range: 4, end_of_range: 5 })
+            })]
         });
 
         expect(frbcFillLevelTargetProfile.message_type).toBe("FRBC.FillLevelTargetProfile");
         expect(frbcFillLevelTargetProfile.message_id).toBe("1");
         expect(frbcFillLevelTargetProfile.start_time).toBe("2");
-        expect(frbcFillLevelTargetProfile.elements).toStrictEqual([{
+        expect(frbcFillLevelTargetProfile.elements).toStrictEqual([new FrbcFillLevelTargetProfileElement( {
             duration: 3,
-            fill_level_range: { start_of_range: 4, end_of_range: 5 }
-        }]);
+            fill_level_range: new NumberRange({ start_of_range: 4, end_of_range: 5 })
+        })]);
 
     });
 
@@ -29,7 +30,7 @@ describe('FrbcFillLevelTargetProfile', () => {
             
             const element = new FrbcFillLevelTargetProfileElement({
                 duration: 3,
-                fill_level_range: { start_of_range: 4, end_of_range: 5 }
+                fill_level_range: new NumberRange({ start_of_range: 4, end_of_range: 5 })
             });
 
             new FrbcFillLevelTargetProfile({
@@ -44,10 +45,10 @@ describe('FrbcFillLevelTargetProfile', () => {
         const frbcFillLevelTargetProfile = new FrbcFillLevelTargetProfile({
             message_id: "1",
             start_time: "2",
-            elements: [{
+            elements: [new FrbcFillLevelTargetProfileElement( {
                 duration: 3,
-                fill_level_range: { start_of_range: 4, end_of_range: 5 }
-            }]
+                fill_level_range: new NumberRange({ start_of_range: 4, end_of_range: 5 })
+            })]
         });
 
         const jsonFrbcFillLevelTargetProfile = JSON.stringify(frbcFillLevelTargetProfile, null, 2);
@@ -56,10 +57,10 @@ describe('FrbcFillLevelTargetProfile', () => {
         expect(parsedFrbcFillLevelTargetProfile.message_type).toBe("FRBC.FillLevelTargetProfile");
         expect(parsedFrbcFillLevelTargetProfile.message_id).toBe("1");
         expect(parsedFrbcFillLevelTargetProfile.start_time).toBe("2");
-        expect(parsedFrbcFillLevelTargetProfile.elements).toStrictEqual([{
+        expect(parsedFrbcFillLevelTargetProfile.elements).toStrictEqual([new FrbcFillLevelTargetProfileElement( {
             duration: 3,
-            fill_level_range: { start_of_range: 4, end_of_range: 5 }
-        }]);
+            fill_level_range: new NumberRange({ start_of_range: 4, end_of_range: 5 })
+        })]);
     });
 
 });

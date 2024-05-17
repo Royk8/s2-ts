@@ -1,4 +1,5 @@
 import { FrbcLeakageBehaviour, FrbcLeakageBehaviourElement } from '../../../src/app/FRBC';
+import { NumberRange } from '../../../src/app/common';
 import { parseMessage } from '../../../src/app/services';
 
 describe('FrbcLeakageBehaviour', () => {
@@ -7,19 +8,21 @@ describe('FrbcLeakageBehaviour', () => {
         const frbcLeakageBehaviour = new FrbcLeakageBehaviour({
             message_id: "1",
             valid_from: "2",
-            elements: [{
-                fill_level_range: { start_of_range: 3, end_of_range: 4 },
+            elements: [
+                new FrbcLeakageBehaviourElement({
+                fill_level_range: new NumberRange({ start_of_range: 3, end_of_range: 4 }),
                 leakage_rate: 5
-            }]
+            })]
         });
 
         expect(frbcLeakageBehaviour.message_type).toBe("FRBC.LeakageBehaviour");
         expect(frbcLeakageBehaviour.message_id).toBe("1");
         expect(frbcLeakageBehaviour.valid_from).toBe("2");
-        expect(frbcLeakageBehaviour.elements).toStrictEqual([{
-            fill_level_range: { start_of_range: 3, end_of_range: 4 },
+        expect(frbcLeakageBehaviour.elements).toStrictEqual([
+            new FrbcLeakageBehaviourElement({
+            fill_level_range: new NumberRange({ start_of_range: 3, end_of_range: 4 }),
             leakage_rate: 5
-        }]);
+        })]);
 
     });
 
@@ -28,7 +31,7 @@ describe('FrbcLeakageBehaviour', () => {
         expect(() => {
             
             const element = new FrbcLeakageBehaviourElement({
-                fill_level_range: { start_of_range: 3, end_of_range: 4 },
+                fill_level_range: new NumberRange({ start_of_range: 3, end_of_range: 4 }),
                 leakage_rate: 5
             });
 
@@ -44,10 +47,11 @@ describe('FrbcLeakageBehaviour', () => {
         const frbcLeakageBehaviour = new FrbcLeakageBehaviour({
             message_id: "1",
             valid_from: "2",
-            elements: [{
-                fill_level_range: { start_of_range: 3, end_of_range: 4 },
+            elements: [
+                new FrbcLeakageBehaviourElement({
+                fill_level_range: new NumberRange({ start_of_range: 3, end_of_range: 4 }),
                 leakage_rate: 5
-            }]
+            })]
         });
 
         const jsonFrbcLeakageBehaviour = JSON.stringify(frbcLeakageBehaviour, null, 2);
@@ -56,10 +60,11 @@ describe('FrbcLeakageBehaviour', () => {
         expect(parsedFrbcLeakageBehaviour.message_type).toBe("FRBC.LeakageBehaviour");
         expect(parsedFrbcLeakageBehaviour.message_id).toBe("1");
         expect(parsedFrbcLeakageBehaviour.valid_from).toBe("2");
-        expect(parsedFrbcLeakageBehaviour.elements).toStrictEqual([{
-            fill_level_range: { start_of_range: 3, end_of_range: 4 },
+        expect(parsedFrbcLeakageBehaviour.elements).toStrictEqual([
+            new FrbcLeakageBehaviourElement({
+            fill_level_range: new NumberRange({ start_of_range: 3, end_of_range: 4 }),
             leakage_rate: 5
-        }]);
+        })]);
     });
 
 });

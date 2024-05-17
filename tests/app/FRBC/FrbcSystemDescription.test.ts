@@ -1,6 +1,6 @@
 import { FrbcOperationMode, FrbcSystemDescription, FrbcStorageDescription } from '../../../src/app/FRBC';
 import { FrbcActuatorDescription } from '../../../src/app/FRBC';
-import { Timer, Transition } from '../../../src/app/common';
+import { NumberRange, Timer, Transition } from '../../../src/app/common';
 
 describe('FrbcSystemDescription', () => {
     it('should create a FrbcSystemDescription object', () => {
@@ -8,8 +8,8 @@ describe('FrbcSystemDescription', () => {
         const operationMode = new FrbcOperationMode({
             id: "1",
             elements: [{
-                fill_level_range: { start_of_range: 1, end_of_range: 2 },
-                fill_rate: { start_of_range: 3, end_of_range: 4 },
+                fill_level_range: new NumberRange({ start_of_range: 1, end_of_range: 2 }),
+                fill_rate: new NumberRange({ start_of_range: 3, end_of_range: 4 }),
                 power_ranges: [{ 
                     start_of_range: 5, 
                     end_of_range: 6 , 
@@ -52,7 +52,7 @@ describe('FrbcSystemDescription', () => {
             provides_fill_level_target_profile: true,
             provides_leakage_behaviour: true,
             provides_usage_forecast: true,
-            fill_level_range: { start_of_range: 3, end_of_range: 4 }
+            fill_level_range: new NumberRange({ start_of_range: 3, end_of_range: 4 })
         });
 
         const frbcSystemDescription = new FrbcSystemDescription({

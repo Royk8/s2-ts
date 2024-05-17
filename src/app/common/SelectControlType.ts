@@ -12,8 +12,7 @@ export class SelectControlType implements GenSelectControlType {
     message_id: ID;
     control_type: ControlType;
 
-    constructor(constructorParameters: ConstructorParameters){
-        const { message_id, control_type } = constructorParameters;
+    constructor({ message_id, control_type }: ConstructorParameters){
 
         this.message_type = "SelectControlType";
         this.message_id = Uuid.generate(message_id);

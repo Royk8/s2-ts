@@ -16,8 +16,7 @@ export class FrbcUsageForecast implements FRBC_UsageForecast {
     start_time: Timestamp;
     elements: [FrbcUsageForecastElement, ...FrbcUsageForecastElement[]];
 
-    constructor(constructorParameters: ConstructorParameters){
-        const { message_id, start_time, elements } = constructorParameters;
+    constructor({ message_id, start_time, elements }: ConstructorParameters){
 
         if(elements.length > 288){
             throw new Error("The size of the FRBC_UsageForecastElements array must be between 1 and 288");

@@ -16,8 +16,7 @@ export class PowerMeasurement implements GenPowerMeasurement {
     measurement_timestamp: Timestamp;
     values : PowerValuesArray
 
-    constructor(constructorParameters: ConstructorParameters){
-        const { message_id, measurement_timestamp, values } = constructorParameters;
+    constructor({ message_id, measurement_timestamp, values }: ConstructorParameters){
 
         validateTimestamp(measurement_timestamp);
 

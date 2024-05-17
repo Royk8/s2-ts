@@ -15,8 +15,7 @@ export class FrbcFillLevelTargetProfile implements FRBC_FillLevelTargetProfile {
     start_time: Timestamp;
     elements: [FrbcFillLevelTargetProfileElement, ...FrbcFillLevelTargetProfileElement[]];
 
-    constructor(constructorParameters: ConstructorParameters){
-        const { message_id, start_time, elements } = constructorParameters;
+    constructor({ message_id, start_time, elements }: ConstructorParameters){
 
         if(elements.length > 288){
             throw new Error("The size of the FRBC_FillLevelTargetProfileElements array must be between 1 and 288");
@@ -27,6 +26,9 @@ export class FrbcFillLevelTargetProfile implements FRBC_FillLevelTargetProfile {
         this.message_type = "FRBC.FillLevelTargetProfile";
         this.message_id = Uuid.generate(message_id);
         this.start_time = start_time;
-        this.elements = elements;
+
+        const elementsArray = elements.map(element => new FrbcFillLevelTargetProfileElement(element));
+
+        this.elements = elementsArray as [FrbcFillLevelTargetProfileElement, ...FrbcFillLevelTargetProfileElement[]];
     }
 }

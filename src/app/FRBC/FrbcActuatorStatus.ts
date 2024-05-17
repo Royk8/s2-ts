@@ -1,7 +1,6 @@
 import { FRBC_ActuatorStatus } from "@messages";
 import { ID } from "@schemas";
-import { validateOperationModeFactor } from "./FrbcOperationModeFactor";
-import type { FrbcOperationModeFactor } from "./FrbcOperationModeFactor";
+import { validateOperationModeFactor, FrbcOperationModeFactor } from "./FrbcOperationModeFactor";
 import { Timestamp, validateTimestamp } from "../common";
 import { Uuid } from "../services/Uuid";
 
@@ -23,8 +22,7 @@ export class FrbcActuatorStatus implements FRBC_ActuatorStatus {
     previous_operation_mode_id?: ID;
     transition_timestamp?: Timestamp;
 
-    constructor(constructorParameters: ConstructorParameters){
-        const { message_id, actuator_id, active_operation_mode_id, operation_mode_factor, previous_operation_mode_id, transition_timestamp } = constructorParameters;
+    constructor({ message_id, actuator_id, active_operation_mode_id, operation_mode_factor, previous_operation_mode_id, transition_timestamp }: ConstructorParameters){
 
         validateOperationModeFactor(operation_mode_factor);
         validateTimestamp(transition_timestamp);
