@@ -1,6 +1,6 @@
 {
   "name": "s2-typescript",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "S2 standard library for typescript for S2 comunication in a smart grid",
   "main": "dist/index.js",
   "module": "dist/index.mjs",

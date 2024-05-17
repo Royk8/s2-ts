@@ -1,5 +1,11 @@
 # s2-typescript
 
+## 0.3.1
+
+### Patch Changes
+
+- 25ac401: Parameters presentation updated. All folder are available to use now
+
 ## 0.3.0
 
 ### Minor Changes
