@@ -1,6 +1,6 @@
 import { FRBC_OperationModeElement } from "@schemas";
 import { NumberRange } from "../common";
-import { PowerRangesArray } from "./ExtraTypes";
+import { PowerRangesArray } from "../common/ExtraTypes";
 
 interface ConstructorParameters{
     fill_level_range: NumberRange;
