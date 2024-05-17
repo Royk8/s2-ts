@@ -24,8 +24,7 @@ export class FrbcInstruction implements FRBC_Instruction {
     execution_time: Timestamp;
     abnormal_condition: boolean;
 
-    constructor(constructorParameters: ConstructorParameters){
-        const { message_id, id, actuator_id, operation_mode, operation_mode_factor, execution_time, abnormal_condition } = constructorParameters;
+    constructor({ message_id, id, actuator_id, operation_mode, operation_mode_factor, execution_time, abnormal_condition }: ConstructorParameters){
 
         validateOperationModeFactor(operation_mode_factor);
         validateTimestamp(execution_time);

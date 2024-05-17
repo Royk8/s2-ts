@@ -21,17 +21,7 @@ export class PowerForecastValue implements PowerForecastValueGen {
     value_lower_limit?: number;
     commodity_quantity: CommodityQuantity;
 
-    constructor(constructorParameters: ConstructorParameters) {
-        const {
-            value_upper_limit,
-            value_upper_95PPR,
-            value_upper_68PPR,
-            value_lower_68PPR,
-            value_lower_95PPR,
-            value_lower_limit,
-            value_expected,
-            commodity_quantity
-        } = constructorParameters;
+    constructor({ value_upper_limit, value_upper_95PPR, value_upper_68PPR, value_lower_68PPR, value_lower_95PPR, value_lower_limit, value_expected, commodity_quantity }: ConstructorParameters) {
 
         this.value_upper_limit = value_upper_limit;
         this.value_upper_95PPR = value_upper_95PPR;

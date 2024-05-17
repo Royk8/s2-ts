@@ -10,8 +10,7 @@ export class FrbcFillLevelTargetProfileElement implements FRBC_FillLevelTargetPr
     duration: Duration;
     fill_level_range: NumberRange;
 
-    constructor(constructorParameters: ConstructorParameters){
-        const { duration, fill_level_range } = constructorParameters;
+    constructor({ duration, fill_level_range }: ConstructorParameters){
         
         validateDuration(duration);
         const range = new NumberRange({

@@ -19,8 +19,7 @@ export class FrbcSystemDescription implements FRBC_SystemDescription {
     actuators: ActuatorArray;
     storage: FrbcStorageDescription;
 
-    constructor(constructorParameters: ConstructorParameters){
-        const { message_id, valid_from, actuators, storage } = constructorParameters;
+    constructor({ message_id, valid_from, actuators, storage }: ConstructorParameters){
 
         validateTimestamp(valid_from);
         

@@ -19,8 +19,7 @@ export class FrbcActuatorDescription implements FRBC_ActuatorDescription {
     transitions: Transition[];
     timers: Timer[];
 
-    constructor(constructorParameters: ConstructorParameters){
-        const { id, supported_commodities, operation_modes, transitions, timers, diagnostic_label } = constructorParameters;
+    constructor({ id, supported_commodities, operation_modes, transitions, timers, diagnostic_label }: ConstructorParameters){
 
         if(operation_modes.length > 100){
             throw new Error("FRBC_ActuatorDescription: operation_modes must be between 1 and 100 elements");

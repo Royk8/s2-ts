@@ -14,8 +14,7 @@ export class Timer implements GenTimer {
     diagnostic_label?: string;
     duration: Duration;
 
-    constructor(constructorParameters: ConstructorParameters){
-        const { id, duration, diagnostic_label } = constructorParameters;
+    constructor({ id, duration, diagnostic_label }: ConstructorParameters){
 
         validateDuration(duration);      
         

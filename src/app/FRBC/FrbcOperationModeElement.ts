@@ -15,8 +15,7 @@ export class FrbcOperationModeElement implements FRBC_OperationModeElement {
     power_ranges: PowerRangesArray;
     running_costs?: NumberRange;
 
-    constructor(constructorParameters: ConstructorParameters){
-        const { fill_level_range, fill_rate, power_ranges, running_costs } = constructorParameters;
+    constructor({ fill_level_range, fill_rate, power_ranges, running_costs }: ConstructorParameters){
 
         this.fill_level_range = fill_level_range;
         this.fill_rate = fill_rate;
