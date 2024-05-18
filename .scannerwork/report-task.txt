@@ -2,5 +2,5 @@ projectKey=s2-ts
 serverUrl=http://localhost:9000
 serverVersion=10.5.1.90531
 dashboardUrl=http://localhost:9000/dashboard?id=s2-ts
-ceTaskId=00c98315-6963-4a9f-9fdf-2aab6c87a964
-ceTaskUrl=http://localhost:9000/api/ce/task?id=00c98315-6963-4a9f-9fdf-2aab6c87a964
+ceTaskId=1ca3790d-6de5-4939-824c-41b847847b65
+ceTaskUrl=http://localhost:9000/api/ce/task?id=1ca3790d-6de5-4939-824c-41b847847b65
