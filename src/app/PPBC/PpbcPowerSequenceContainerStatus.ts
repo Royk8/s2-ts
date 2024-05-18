@@ -1,6 +1,4 @@
-import { PPBC_PowerSequenceContainerStatus } from "@schemas";
-import { ID } from "@schemas";
-import { PPBC_PowerSequenceStatus } from "src/schemas/generated/PPBC.PowerSequenceContainerStatus";
+import { PPBC_PowerSequenceContainerStatus, PPBC_PowerSequenceStatus, ID } from "@schemas";
 import { Duration, validateDuration } from "../common";
 
 interface ConstructorParameters {
