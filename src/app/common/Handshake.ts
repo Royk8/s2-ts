@@ -15,6 +15,7 @@ export class Handshake implements GenHandshake {
     supported_protocol_versions?: [string, ...string[]];
 
     constructor( { message_id, role, supported_protocol_versions }: ConstructorParameters ) {
+        console.log("Handshake constructor");
         this.message_type = 'Handshake';
         this.message_id = Uuid.generate(message_id);
         this.role = role;

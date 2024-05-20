@@ -12,7 +12,7 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage",
     "clean": "rimraf dist",
     "build": "tsup src/index.ts --format cjs,esm --dts && tsc-alias",
     "lint": "tsc",

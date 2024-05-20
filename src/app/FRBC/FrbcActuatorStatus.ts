@@ -25,7 +25,9 @@ export class FrbcActuatorStatus implements FRBC_ActuatorStatus {
     constructor({ message_id, actuator_id, active_operation_mode_id, operation_mode_factor, previous_operation_mode_id, transition_timestamp }: ConstructorParameters){
 
         validateOperationModeFactor(operation_mode_factor);
-        validateTimestamp(transition_timestamp);
+        if(transition_timestamp){
+            validateTimestamp(transition_timestamp);
+        }        
 
         this.message_type = "FRBC.ActuatorStatus";
         this.message_id = Uuid.generate(message_id);

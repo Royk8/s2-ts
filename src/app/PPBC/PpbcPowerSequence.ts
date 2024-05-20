@@ -29,8 +29,8 @@ export class PpbcPowerSequence implements PPBC_PowerSequence {
     }
 
     Validate({ id, elements, is_interruptible, max_pause_before, abnormal_condition_only }: ConstructorParameters): void {
-        if (elements.length < 0 || elements.length > 288) {
-            throw new Error("elements must have between 0 and 288 elements");
+        if (elements.length < 1 || elements.length > 288) {
+            throw new Error("elements must have between 1 and 288 elements");
         }
         validateDuration(max_pause_before);
         elements.map((element) => element.Validate(element));

@@ -12,6 +12,8 @@ export class NumberRange implements GenNumberRange {
     constructor({ start_of_range, end_of_range }: ConstructorParameters){
 
         this.Validate({ start_of_range, end_of_range });
+
+        console.log("NumberRange constructor called");
         
         this.start_of_range = start_of_range;
         this.end_of_range = end_of_range;

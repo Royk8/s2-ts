@@ -20,8 +20,8 @@ export class PpbcPowerSequenceElement implements PPBC_PowerSequenceElement {
     public Validate({ duration, power_values }): void {
         validateDuration(duration);
 
-        if (power_values.length < 0 || power_values.length > 10) {
-            throw new Error("power_values must have between 0 and 10 elements");
+        if (power_values.length < 1 || power_values.length > 10) {
+            throw new Error("power_values must have between 1 and 10 elements");
         }
     }
 

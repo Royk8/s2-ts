@@ -33,5 +33,23 @@ describe('Handshake', () => {
         expect(parsedHanshake.role).toBe('CEM');
         expect(parsedHanshake.supported_protocol_versions).toStrictEqual(['1.0', '2.0']);
     })
+
+    it('should create a HandshakeObject without optional parameters after parsing it from a json', () => {
+        const handshake = new Handshake({
+            role: 'CEM',
+        })
+
+        const jsonHandshake = JSON.stringify(handshake, null, 2);
+
+        const parsedHanshake = parseMessage(jsonHandshake);
+
+        console.log(jsonHandshake);
+        console.log(parsedHanshake);
+
+        expect(parsedHanshake.message_type).toBe('Handshake');
+        expect(parsedHanshake.message_id).toBeDefined();
+        expect(parsedHanshake.role).toBe('CEM');
+        expect(parsedHanshake.supported_protocol_versions).toBeUndefined();
+    })
 });
 
