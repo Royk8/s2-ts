@@ -4,7 +4,7 @@ import { Uuid } from "../services/Uuid";
 import { Timestamp, validateTimestamp } from "../common";
 
 interface ConstructorParameters {
-    message_id: ID;
+    message_id?: ID;
     active_operation_mode_id: ID;
     operation_mode_factor: number;
     previous_operation_mode_id?: ID;

@@ -2,16 +2,6 @@ import { DdbcAverageDemandRateForecastElement } from "../../../src/app/DDBC/Ddbc
 
 describe('DdbcAverageDemandRateForecastElement', () => {
     it('should create a DdbcAverageDemandRateForecastElement object', () => {
-
-        // duration: Duration;
-        // demand_rate_upper_limit?: number;
-        // demand_rate_upper_95PPR?: number;
-        // demand_rate_upper_68PPR?: number;
-        // demand_rate_expected: number;
-        // demand_rate_lower_68PPR?: number;
-        // demand_rate_lower_95PPR?: number;
-        // demand_rate_lower_limit?: number;
-
         const duration = 10;
         
         const averageDemandRateForecastElement = new DdbcAverageDemandRateForecastElement({

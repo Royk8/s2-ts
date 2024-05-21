@@ -4,7 +4,7 @@ import { NumberRange, PowerRange } from "../common";
 import { Uuid } from "../services/Uuid";
 
 interface ConstructorParameters {
-    id: ID;
+    id?: ID;
     diagnostic_label?: string;
     power_ranges: PowerRangesArray;
     running_costs?: NumberRange;
