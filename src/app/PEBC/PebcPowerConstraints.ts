@@ -6,6 +6,7 @@ import { PEBC_PowerEnvelopeConsequenceType } from "src/messages/generated/PEBC.P
 import { Timestamp, validateTimestamp } from "../common";
 
 interface ConstructorParameters {
+    message_id?: ID;
     id: ID;
     valid_from: Timestamp;
     valid_until?: Timestamp;
@@ -23,7 +24,7 @@ export class PebcPowerConstraints implements PEBC_PowerConstraints{
     allowed_limit_ranges: [PebcAllowedLimitRange, PebcAllowedLimitRange, ...PebcAllowedLimitRange[]];
 
 
-    constructor({id, valid_from, valid_until, consequence_type, allowed_limit_ranges}: ConstructorParameters){
+    constructor({message_id, id, valid_from, valid_until, consequence_type, allowed_limit_ranges}: ConstructorParameters){
         validateTimestamp(valid_from);
         if(valid_until){
             validateTimestamp(valid_until);
@@ -44,7 +45,7 @@ export class PebcPowerConstraints implements PEBC_PowerConstraints{
         }
         
         this.message_type = "PEBC.PowerConstraints";
-        this.message_id = Uuid.generate();
+        this.message_id = Uuid.generate(message_id);
         this.id = id;
         this.valid_from = valid_from;
         this.valid_until = valid_until;

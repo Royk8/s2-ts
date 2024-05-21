@@ -3,7 +3,7 @@ import { PebcPowerEnvelopeElement } from ".";
 import { Uuid } from "../services/Uuid";
 
 interface ConstructorParameters {
-    id: ID;
+    id?: ID;
     commodity_quantity: CommodityQuantity;
     power_envelope_elements: [PebcPowerEnvelopeElement, ...PebcPowerEnvelopeElement[]];
 }
@@ -24,6 +24,8 @@ export class PebcPowerEnvelope implements PEBC_PowerEnvelope{
         if(power_envelope_elements.length < 1 || power_envelope_elements.length > 288){
             throw new Error("Power envelope must contain between 1 and 288 elements");
         }
-        power_envelope_elements.map((element) => element.Validate(element));
+        for(let i = 0; i < power_envelope_elements.length; i++){
+            power_envelope_elements[i] = new PebcPowerEnvelopeElement(power_envelope_elements[i]);
+        }
     }
 }

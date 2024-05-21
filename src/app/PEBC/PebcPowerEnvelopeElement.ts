@@ -21,7 +21,7 @@ export class PebcPowerEnvelopeElement implements PEBC_PowerEnvelopeElement{
 
     public Validate({duration, upper_limit, lower_limit}: ConstructorParameters) : void {
         if(upper_limit < lower_limit){
-            throw new Error("Upper limit must be greater than or equal to lower limit");
+            throw new Error("PowerEnvelopeElement: Upper limit must be greater than or equal to lower limit");
         }
         validateDuration(duration);
     }
