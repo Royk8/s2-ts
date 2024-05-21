@@ -5,7 +5,7 @@ import { ID } from "@schemas";
 import { Uuid } from "../services/Uuid";
 
 interface ConstructorParameters {
-    message_id: ID;
+    message_id?: ID;
     start_time: Timestamp;
     elements: [DdbcAverageDemandRateForecastElement, ...DdbcAverageDemandRateForecastElement[]];
 }

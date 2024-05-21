@@ -23,7 +23,8 @@ export class DdbcActuatorStatus implements DDBC_ActuatorStatus {
 
     constructor({ message_id, actuator_id, active_operation_mode_id, operation_mode_factor, previous_operation_mode_id, transition_timestamp }: ConstructorParameters){
         
-        validateTimestamp(transition_timestamp);
+        if(transition_timestamp !== undefined)
+            validateTimestamp(transition_timestamp);
         if(operation_mode_factor < 0 || operation_mode_factor > 1){
             throw new Error('DDBC_ActuatorStatus: operation_mode_factor must be between 0 and 1');
         }

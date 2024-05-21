@@ -6,7 +6,7 @@ import { ActuatorArray } from "./ExtraTypes";
 import { DdbcActuatorDescription } from "./DdbcActuatorDescription";
 
 interface ConstructorParameters {
-    message_id: ID;
+    message_id?: ID;
     valid_from: Timestamp;
     actuators: ActuatorArray;
     present_demand_rate: NumberRange;
