@@ -33,6 +33,8 @@ export class PpbcPowerSequence implements PPBC_PowerSequence {
             throw new Error("elements must have between 1 and 288 elements");
         }
         validateDuration(max_pause_before);
-        elements.map((element) => element.Validate(element));
+        for(let i = 0; i < elements.length; i++) {
+            elements[i] = new PpbcPowerSequenceElement(elements[i]);
+        }
     }
 }

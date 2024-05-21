@@ -1,4 +1,4 @@
-import { PowerForecastValue } from '@schemas';
+import { PowerForecastValue } from '../';
 
 export type PowerForecastValuesArray =
 | [PowerForecastValue]
