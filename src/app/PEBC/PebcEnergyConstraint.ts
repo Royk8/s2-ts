@@ -4,7 +4,7 @@ import { Uuid } from "../services/Uuid";
 import { Timestamp, validateTimestamp } from "../common";
 
 interface ConstructorParameters {
-    message_id: ID;
+    message_id?: ID;
     id: ID;
     valid_from: Timestamp;
     valid_until: Timestamp;

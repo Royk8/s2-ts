@@ -26,8 +26,6 @@ describe('Handshake', () => {
 
         const parsedHanshake = parseMessage(jsonHandshake);
 
-        console.log(jsonHandshake);
-
         expect(parsedHanshake.message_type).toBe('Handshake');
         expect(parsedHanshake.message_id).toBe('1234');
         expect(parsedHanshake.role).toBe('CEM');
@@ -42,9 +40,6 @@ describe('Handshake', () => {
         const jsonHandshake = JSON.stringify(handshake, null, 2);
 
         const parsedHanshake = parseMessage(jsonHandshake);
-
-        console.log(jsonHandshake);
-        console.log(parsedHanshake);
 
         expect(parsedHanshake.message_type).toBe('Handshake');
         expect(parsedHanshake.message_id).toBeDefined();

@@ -22,7 +22,9 @@ export class PpbcPowerProfileStatus implements PPBC_PowerProfileStatus {
     }
 
     public Validate({ message_id, sequence_container_status }: ConstructorParameters): void {
-        sequence_container_status.map((sequence_container_status) => sequence_container_status.Validate(sequence_container_status));
+        for(let i = 0; i < sequence_container_status.length; i++) {
+            sequence_container_status[i] = new PpbcPowerSequenceContainerStatus(sequence_container_status[i]);
+        }
     }
     
 

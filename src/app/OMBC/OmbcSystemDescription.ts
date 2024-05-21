@@ -5,7 +5,7 @@ import { Timestamp, validateTimestamp, Transition, Timer } from "../common";
 import { OmbcOperationMode } from ".";
 
 interface ConstructorParameters {
-    message_id: ID;
+    message_id?: ID;
     valid_from: Timestamp;
     operation_modes: [OmbcOperationMode, ...OmbcOperationMode[]];
     transitions: Transition[];
@@ -23,13 +23,13 @@ export class OmbcSystemDescription implements OMBC_SystemDescription {
     constructor({ message_id, valid_from, operation_modes, transitions, timers }: ConstructorParameters) {
 
         if(operation_modes.length === 0 || operation_modes.length > 100) {
-            throw new Error("operation_modes must have between 1 and 100 elements");
+            throw new Error("OMBC_SystemDescription: operation_modes must have between 1 and 100 elements");
         }
         if(transitions.length === 0 || transitions.length > 1000) {
-            throw new Error("transitions must have between 1 and 1000 elements");
+            throw new Error("OMBC_SystemDescription: transitions must have between 1 and 1000 elements");
         }
         if(timers.length === 0 || timers.length > 1000) {
-            throw new Error("timers must have between 1 and 1000 elements");
+            throw new Error("OMBC_SystemDescription: timers must have between 1 and 1000 elements");
         }
 
         validateTimestamp(valid_from);

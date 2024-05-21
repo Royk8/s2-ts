@@ -5,7 +5,7 @@ import { Uuid } from "../services/Uuid";
 import { PpbcPowerSequenceContainer } from ".";
 
 interface ConstructorParameters {
-    message_id: ID;
+    message_id?: ID;
     id: ID;
     start_time: Timestamp;
     end_time: Timestamp;
@@ -34,7 +34,10 @@ export class PpbcPowerProfileDefinition implements PPBC_PowerProfileDefinition {
     public Validate({ message_id, id, start_time, end_time, power_sequences_containers }: ConstructorParameters): void {
         validateTimestamp(start_time);
         validateTimestamp(end_time);
-        power_sequences_containers.map((power_sequences_container) => power_sequences_container.Validate(power_sequences_container));
+        
+        for(let i = 0; i < power_sequences_containers.length; i++) {
+            power_sequences_containers[i] = new PpbcPowerSequenceContainer(power_sequences_containers[i]);
+        }
     }
     
 
