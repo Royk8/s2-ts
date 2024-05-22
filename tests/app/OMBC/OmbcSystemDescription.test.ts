@@ -209,7 +209,7 @@ describe('OmbcSystemDescription', () => {
             operation_modes: [ombcOperationMode],
             transitions: transitionsArray,
             timers: timers
-        })).toThrow('OMBC_SystemDescription: transitions must have between 1 and 1000 elements');
+        })).toThrow('OMBC_SystemDescription: transitions must have between 0 and 1000 elements');
     });
 
     it('should throw an error if timers has more than 1000 elements', () => {
@@ -257,6 +257,6 @@ describe('OmbcSystemDescription', () => {
             operation_modes: [ombcOperationMode],
             transitions: transitions,
             timers: timersArray
-        })).toThrow('OMBC_SystemDescription: timers must have between 1 and 1000 elements');
+        })).toThrow('OMBC_SystemDescription: timers must have between 0 and 1000 elements');
     });
 });
