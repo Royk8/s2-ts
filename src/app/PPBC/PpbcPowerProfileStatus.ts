@@ -4,7 +4,16 @@ import { Uuid } from "../services/Uuid";
 import { PpbcPowerSequenceContainerStatus } from ".";
 
 interface ConstructorParameters {
+    /**
+     * ID of this message
+     */
     message_id?: ID;
+    /**
+     * Array with status information for all PPBC.PowerSequenceContainers in the PPBC.PowerProfileDefinition.
+     *
+     * @minItems 1
+     * @maxItems 1000
+     */
     sequence_container_status: [PpbcPowerSequenceContainerStatus, ...PpbcPowerSequenceContainerStatus[]];
 }
 
@@ -13,6 +22,13 @@ export class PpbcPowerProfileStatus implements PPBC_PowerProfileStatus {
     message_id: ID;
     sequence_container_status: [PpbcPowerSequenceContainerStatus, ...PpbcPowerSequenceContainerStatus[]];
 
+    /**
+     * Constructs a new instance of the PpbcPowerProfileStatus class.
+     * 
+     * @param {ConstructorParameters} parameters - The parameters for the constructor.
+     * @param {ID} parameters.message_id - ID of this message.
+     * @param {[PpbcPowerSequenceContainerStatus, ...PpbcPowerSequenceContainerStatus[]]} parameters.sequence_container_status - Array with status information for all PPBC.PowerSequenceContainers in the PPBC.PowerProfileDefinition.
+     */
     constructor({ message_id, sequence_container_status }: ConstructorParameters) {
         this.Validate({ message_id, sequence_container_status });
 
@@ -22,10 +38,8 @@ export class PpbcPowerProfileStatus implements PPBC_PowerProfileStatus {
     }
 
     public Validate({ message_id, sequence_container_status }: ConstructorParameters): void {
-        for(let i = 0; i < sequence_container_status.length; i++) {
+        for (let i = 0; i < sequence_container_status.length; i++) {
             sequence_container_status[i] = new PpbcPowerSequenceContainerStatus(sequence_container_status[i]);
         }
     }
-    
-
 }
