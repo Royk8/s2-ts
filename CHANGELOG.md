@@ -1,5 +1,11 @@
 # s2-typescript
 
+## 0.4.0
+
+### Minor Changes
+
+- 1d15eee: All s2-standard implemented
+
 ## 0.3.1
 
 ### Patch Changes
