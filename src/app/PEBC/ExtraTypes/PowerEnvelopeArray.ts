@@ -1,57 +1,57 @@
-import { PEBC_PowerEnvelope } from "@schemas";
+import { PebcPowerEnvelope } from "..";
 
-export type PowerEnvelopeArray = [PEBC_PowerEnvelope]
-| [PEBC_PowerEnvelope, PEBC_PowerEnvelope]
-| [PEBC_PowerEnvelope, PEBC_PowerEnvelope, PEBC_PowerEnvelope]
-| [PEBC_PowerEnvelope, PEBC_PowerEnvelope, PEBC_PowerEnvelope, PEBC_PowerEnvelope]
-| [PEBC_PowerEnvelope, PEBC_PowerEnvelope, PEBC_PowerEnvelope, PEBC_PowerEnvelope, PEBC_PowerEnvelope]
+export type PowerEnvelopeArray = [PebcPowerEnvelope]
+| [PebcPowerEnvelope, PebcPowerEnvelope]
+| [PebcPowerEnvelope, PebcPowerEnvelope, PebcPowerEnvelope]
+| [PebcPowerEnvelope, PebcPowerEnvelope, PebcPowerEnvelope, PebcPowerEnvelope]
+| [PebcPowerEnvelope, PebcPowerEnvelope, PebcPowerEnvelope, PebcPowerEnvelope, PebcPowerEnvelope]
 | [
-    PEBC_PowerEnvelope,
-    PEBC_PowerEnvelope,
-    PEBC_PowerEnvelope,
-    PEBC_PowerEnvelope,
-    PEBC_PowerEnvelope,
-    PEBC_PowerEnvelope
+    PebcPowerEnvelope,
+    PebcPowerEnvelope,
+    PebcPowerEnvelope,
+    PebcPowerEnvelope,
+    PebcPowerEnvelope,
+    PebcPowerEnvelope
   ]
 | [
-    PEBC_PowerEnvelope,
-    PEBC_PowerEnvelope,
-    PEBC_PowerEnvelope,
-    PEBC_PowerEnvelope,
-    PEBC_PowerEnvelope,
-    PEBC_PowerEnvelope,
-    PEBC_PowerEnvelope
+    PebcPowerEnvelope,
+    PebcPowerEnvelope,
+    PebcPowerEnvelope,
+    PebcPowerEnvelope,
+    PebcPowerEnvelope,
+    PebcPowerEnvelope,
+    PebcPowerEnvelope
   ]
 | [
-    PEBC_PowerEnvelope,
-    PEBC_PowerEnvelope,
-    PEBC_PowerEnvelope,
-    PEBC_PowerEnvelope,
-    PEBC_PowerEnvelope,
-    PEBC_PowerEnvelope,
-    PEBC_PowerEnvelope,
-    PEBC_PowerEnvelope
+    PebcPowerEnvelope,
+    PebcPowerEnvelope,
+    PebcPowerEnvelope,
+    PebcPowerEnvelope,
+    PebcPowerEnvelope,
+    PebcPowerEnvelope,
+    PebcPowerEnvelope,
+    PebcPowerEnvelope
   ]
 | [
-    PEBC_PowerEnvelope,
-    PEBC_PowerEnvelope,
-    PEBC_PowerEnvelope,
-    PEBC_PowerEnvelope,
-    PEBC_PowerEnvelope,
-    PEBC_PowerEnvelope,
-    PEBC_PowerEnvelope,
-    PEBC_PowerEnvelope,
-    PEBC_PowerEnvelope
+    PebcPowerEnvelope,
+    PebcPowerEnvelope,
+    PebcPowerEnvelope,
+    PebcPowerEnvelope,
+    PebcPowerEnvelope,
+    PebcPowerEnvelope,
+    PebcPowerEnvelope,
+    PebcPowerEnvelope,
+    PebcPowerEnvelope
   ]
 | [
-    PEBC_PowerEnvelope,
-    PEBC_PowerEnvelope,
-    PEBC_PowerEnvelope,
-    PEBC_PowerEnvelope,
-    PEBC_PowerEnvelope,
-    PEBC_PowerEnvelope,
-    PEBC_PowerEnvelope,
-    PEBC_PowerEnvelope,
-    PEBC_PowerEnvelope,
-    PEBC_PowerEnvelope
+    PebcPowerEnvelope,
+    PebcPowerEnvelope,
+    PebcPowerEnvelope,
+    PebcPowerEnvelope,
+    PebcPowerEnvelope,
+    PebcPowerEnvelope,
+    PebcPowerEnvelope,
+    PebcPowerEnvelope,
+    PebcPowerEnvelope,
+    PebcPowerEnvelope
   ];

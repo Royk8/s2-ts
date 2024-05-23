@@ -186,7 +186,7 @@ describe('FrbcActuatorDescription', () => {
                 transitions: [transition],
                 timers: [timer, ...new Array(100).fill(timer)]
             });
-        }).toThrow('FRBC_ActuatorDescription: timers must be less than and 100 elements');
+        }).toThrow('FRBC_ActuatorDescription: timers must be less than 100 elements');
     });
 
 });

@@ -1,8 +1,17 @@
 import { FRBC_FillLevelTargetProfileElement } from "@schemas";
 import { Duration, validateDuration, NumberRange } from "../common";
 
-interface ConstructorParameters{
+/**
+ * Parameters for constructing a new instance of FrbcFillLevelTargetProfileElement.
+ */
+interface ConstructorParameters {
+    /**
+     * The duration of the element.
+     */
     duration: Duration,
+    /**
+     * The target range in which the fill_level must be for the time period during which the element is active. The start of the range must be smaller or equal to the end of the range. The CEM must take best-effort actions to proactively achieve this target.
+     */
     fill_level_range: NumberRange,
 }
 
@@ -10,6 +19,13 @@ export class FrbcFillLevelTargetProfileElement implements FRBC_FillLevelTargetPr
     duration: Duration;
     fill_level_range: NumberRange;
 
+    /**
+     * Constructs a new instance of FrbcFillLevelTargetProfileElement.
+     * 
+     * @param {ConstructorParameters} constructorParameters - The parameters for the constructor.
+     * @param {Duration} constructorParameters.duration - The duration of the element.
+     * @param {NumberRange} constructorParameters.fill_level_range - The target range in which the fill_level must be for the time period during which the element is active.
+     */
     constructor({ duration, fill_level_range }: ConstructorParameters){
         
         validateDuration(duration);

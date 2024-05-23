@@ -1,3 +1,7 @@
+/**
+ * Duration in milliseconds
+ * @typedef {number} Duration
+ */
 export type Duration = number;
 
 export const validateDuration = (value: Duration) : void => {
