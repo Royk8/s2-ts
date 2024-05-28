@@ -65,3 +65,11 @@ export function parseMessage(json: any): any {
     console.log("Unknown message type")
     return null;
 }
+
+// This function takes an instance of a message class and converts it to a Json string
+export function messageToJson(message: any): string {
+    if(message.message_type && messageTypeToClass[message.message_type]) {
+        return JSON.stringify(message);
+    }
+    throw new Error("Unknown message type");
+}

@@ -57,7 +57,7 @@ export class PpbcScheduleInstruction implements PPBC_ScheduleInstruction {
      * @param {boolean} parameters.abnormal_condition - Indicates if this is an instruction during an abnormal condition.
      */
     constructor({ message_id, id, power_profile_id, sequence_container_id, power_sequence_id, execution_time, abnormal_condition }: ConstructorParameters) {
-        this.Validate({ message_id, id, power_profile_id, sequence_container_id, power_sequence_id, execution_time, abnormal_condition });
+        validateTimestamp(execution_time);
 
         this.message_type = "PPBC.ScheduleInstruction";
         this.message_id = Uuid.generate(message_id);
@@ -67,9 +67,5 @@ export class PpbcScheduleInstruction implements PPBC_ScheduleInstruction {
         this.power_sequence_id = power_sequence_id;
         this.execution_time = execution_time;
         this.abnormal_condition = abnormal_condition;
-    }
-
-    private Validate({ message_id, id, power_profile_id, sequence_container_id, power_sequence_id, execution_time, abnormal_condition }: ConstructorParameters): void {
-        validateTimestamp(execution_time);
     }
 }
