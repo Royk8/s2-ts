@@ -17,13 +17,13 @@ describe('FrbcUsageForecast', () => {
         };
 
         const frbcUsageForecast = new FrbcUsageForecast({
-            message_id: "1",
+            message_id: "32141234",
             start_time: "2021-01-01T00:00:00Z",
             elements: [element]
         });
 
         expect(frbcUsageForecast.message_type).toBe("FRBC.UsageForecast");
-        expect(frbcUsageForecast.message_id).toBe("1");
+        expect(frbcUsageForecast.message_id).toBe("32141234");
         expect(frbcUsageForecast.start_time).toBe("2021-01-01T00:00:00Z");
         expect(frbcUsageForecast.elements[0].duration).toBe(10);
         expect(frbcUsageForecast.elements[0].usage_rate_upper_limit).toBe(1);
@@ -52,7 +52,7 @@ describe('FrbcUsageForecast', () => {
             };
 
             new FrbcUsageForecast({
-                message_id: "1",
+                message_id: "32141234",
                 start_time: "2021-01-01T00:00:00Z",
                 elements: [element, ... new Array(288).fill(element)]
 
@@ -73,7 +73,7 @@ describe('FrbcUsageForecast', () => {
         };
 
         const frbcUsageForecast = new FrbcUsageForecast({
-            message_id: "1",
+            message_id: "32141234",
             start_time: "2021-01-01T00:00:00Z",
             elements: [element]
         });
@@ -82,7 +82,7 @@ describe('FrbcUsageForecast', () => {
         const parsedFrbcUsageForecast = parseMessage(jsonFrbcUsageForecast);
 
         expect(parsedFrbcUsageForecast.message_type).toBe("FRBC.UsageForecast");
-        expect(parsedFrbcUsageForecast.message_id).toBe("1");
+        expect(parsedFrbcUsageForecast.message_id).toBe("32141234");
         expect(parsedFrbcUsageForecast.start_time).toBe("2021-01-01T00:00:00Z");
         expect(parsedFrbcUsageForecast.elements[0].duration).toBe(10);
         expect(parsedFrbcUsageForecast.elements[0].usage_rate_upper_limit).toBe(1);

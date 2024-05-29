@@ -3,7 +3,7 @@ import { Transition } from '../../../src/app/common';
 describe('Transition', () => {
     it('should create a Transition object', () => {
         const transition = new Transition({
-            id: "1",
+            id: "32141234",
             from: "2",
             to: "3",
             start_timers: ["4"],
@@ -13,7 +13,7 @@ describe('Transition', () => {
             abnormal_condition_only: true
         });
 
-        expect(transition.id).toBe("1");
+        expect(transition.id).toBe("32141234");
         expect(transition.from).toBe("2");
         expect(transition.to).toBe("3");
         expect(transition.start_timers).toStrictEqual(["4"]);
@@ -27,7 +27,7 @@ describe('Transition', () => {
     it('should throw an error if the size of the start_timers is greater than 1000', () => {
         expect(() => {
             new Transition({
-                id: "1",
+                id: "32141234",
                 from: "2",
                 to: "3",
                 start_timers: new Array(1001).fill("4"),
@@ -42,7 +42,7 @@ describe('Transition', () => {
     it('should throw an error if the size of the blocking_timers is greater than 1000', () => {
         expect(() => {
             new Transition({
-                id: "1",
+                id: "32141234",
                 from: "2",
                 to: "3",
                 start_timers: ["4"],
