@@ -29,6 +29,7 @@ export { Transition } from './app/common';
 export { FrbcActuatorDescription } from './app/FRBC';
 export { FrbcActuatorStatus } from './app/FRBC';
 export { FrbcFillLevelTargetProfile } from './app/FRBC';
+export { FrbcFillLevelTargetProfileElement } from './app/FRBC';
 export { FrbcInstruction } from './app/FRBC';
 export { FrbcLeakageBehaviour } from './app/FRBC';
 export { FrbcOperationMode } from './app/FRBC';
