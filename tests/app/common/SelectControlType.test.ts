@@ -22,10 +22,6 @@ describe('SelectControlType', () => {
         const jsonSelectControlType = JSON.stringify(selectControlType, null, 2);
         const parsedSelectControlType = parseMessage(jsonSelectControlType);
 
-        console.log(selectControlType);
-        console.log(jsonSelectControlType);
-        console.log(parsedSelectControlType);
-
         expect(parsedSelectControlType.message_type).toBe("SelectControlType");
         expect(parsedSelectControlType.message_id).toBe("1");
         expect(parsedSelectControlType.control_type).toBe("FILL_RATE_BASED_CONTROL");

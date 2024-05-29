@@ -28,16 +28,12 @@ export class PpbcPowerSequenceElement implements PPBC_PowerSequenceElement {
      * @param {PowerForecastValuesArray} parameters.power_values - The value of power and deviations for the given duration.
      */
     constructor({ duration, power_values }: ConstructorParameters) {
-        this.Validate({ duration, power_values });
-        this.duration = duration;
-        this.power_values = power_values;
-    }
-
-    private Validate({ duration, power_values }): void {
         validateDuration(duration);
 
         if (power_values.length < 1 || power_values.length > 10) {
             throw new Error("power_values must have between 1 and 10 elements");
         }
+        this.duration = duration;
+        this.power_values = power_values;
     }
 }

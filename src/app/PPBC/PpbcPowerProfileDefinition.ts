@@ -49,7 +49,12 @@ export class PpbcPowerProfileDefinition implements PPBC_PowerProfileDefinition {
      * @param {[PpbcPowerSequenceContainer, ...PpbcPowerSequenceContainer[]]} parameters.power_sequences_containers - The PPBC.PowerSequenceContainers that make up this PPBC.PowerProfileDefinition.
      */
     constructor({ message_id, id, start_time, end_time, power_sequences_containers }: ConstructorParameters) {
-        this.Validate({ message_id, id, start_time, end_time, power_sequences_containers });
+        validateTimestamp(start_time);
+        validateTimestamp(end_time);
+        
+        for (let i = 0; i < power_sequences_containers.length; i++) {
+            power_sequences_containers[i] = new PpbcPowerSequenceContainer(power_sequences_containers[i]);
+        }
 
         this.message_type = "PPBC.PowerProfileDefinition";
         this.message_id = Uuid.generate(message_id);
@@ -57,14 +62,5 @@ export class PpbcPowerProfileDefinition implements PPBC_PowerProfileDefinition {
         this.start_time = start_time;
         this.end_time = end_time;
         this.power_sequences_containers = power_sequences_containers;
-    }
-
-    public Validate({ message_id, id, start_time, end_time, power_sequences_containers }: ConstructorParameters): void {
-        validateTimestamp(start_time);
-        validateTimestamp(end_time);
-        
-        for (let i = 0; i < power_sequences_containers.length; i++) {
-            power_sequences_containers[i] = new PpbcPowerSequenceContainer(power_sequences_containers[i]);
-        }
     }
 }
