@@ -1,5 +1,11 @@
 # s2-typescript
 
+## 0.4.2
+
+### Patch Changes
+
+- 8a85b08: Custom Ids validated to match the the given regex
+
 ## 0.4.1
 
 ### Patch Changes
