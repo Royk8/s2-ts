@@ -6,7 +6,7 @@ describe('FrbcSystemDescription', () => {
     it('should create a FrbcSystemDescription object', () => {
 
         const operationMode = new FrbcOperationMode({
-            id: "1",
+            id: "32141234",
             elements: [{
                 fill_level_range: new NumberRange({ start_of_range: 1, end_of_range: 2 }),
                 fill_rate: new NumberRange({ start_of_range: 3, end_of_range: 4 }),
@@ -21,7 +21,7 @@ describe('FrbcSystemDescription', () => {
         });
 
         const transition = new Transition({
-            id: "1",
+            id: "32141234",
             from: "2",
             to: "3",
             start_timers: ["4"],
@@ -32,13 +32,13 @@ describe('FrbcSystemDescription', () => {
         });
 
         const timer = new Timer({
-            id: "1",
+            id: "32141234",
             diagnostic_label: "2",
             duration: 3,
         });
 
         const frbcActuatorDescription = new FrbcActuatorDescription({
-            id: "1",
+            id: "32141234",
             diagnostic_label: "2",
             supported_commodities: ["HEAT"],
             operation_modes: [operationMode],
@@ -56,13 +56,13 @@ describe('FrbcSystemDescription', () => {
         });
 
         const frbcSystemDescription = new FrbcSystemDescription({
-            message_id: "1",
+            message_id: "32141234",
             valid_from: '2021-01-01T00:00:00Z',
             actuators: [frbcActuatorDescription],
             storage: storageDescription
         });
 
-        expect(frbcSystemDescription.message_id).toBe("1");
+        expect(frbcSystemDescription.message_id).toBe("32141234");
         expect(frbcSystemDescription.valid_from).toBe('2021-01-01T00:00:00Z');
         expect(frbcSystemDescription.actuators).toStrictEqual([frbcActuatorDescription]);
         expect(frbcSystemDescription.storage).toStrictEqual(storageDescription);        

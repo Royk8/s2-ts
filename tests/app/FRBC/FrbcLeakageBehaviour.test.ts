@@ -6,7 +6,7 @@ describe('FrbcLeakageBehaviour', () => {
     it('should create a FrbcLeakageBehaviour object', () => {
 
         const frbcLeakageBehaviour = new FrbcLeakageBehaviour({
-            message_id: "1",
+            message_id: "32141234",
             valid_from: "2",
             elements: [
                 new FrbcLeakageBehaviourElement({
@@ -16,7 +16,7 @@ describe('FrbcLeakageBehaviour', () => {
         });
 
         expect(frbcLeakageBehaviour.message_type).toBe("FRBC.LeakageBehaviour");
-        expect(frbcLeakageBehaviour.message_id).toBe("1");
+        expect(frbcLeakageBehaviour.message_id).toBe("32141234");
         expect(frbcLeakageBehaviour.valid_from).toBe("2");
         expect(frbcLeakageBehaviour.elements).toStrictEqual([
             new FrbcLeakageBehaviourElement({
@@ -36,7 +36,7 @@ describe('FrbcLeakageBehaviour', () => {
             });
 
             new FrbcLeakageBehaviour({
-            message_id: "1",
+            message_id: "32141234",
             valid_from: "2",
             elements: [element, ... new Array(288).fill(element)]
             
@@ -45,7 +45,7 @@ describe('FrbcLeakageBehaviour', () => {
 
     it('should create a FrbcLeakageBehaviour object after parsing it from a json', () => {
         const frbcLeakageBehaviour = new FrbcLeakageBehaviour({
-            message_id: "1",
+            message_id: "32141234",
             valid_from: "2",
             elements: [
                 new FrbcLeakageBehaviourElement({
@@ -58,7 +58,7 @@ describe('FrbcLeakageBehaviour', () => {
         const parsedFrbcLeakageBehaviour = parseMessage(jsonFrbcLeakageBehaviour);
 
         expect(parsedFrbcLeakageBehaviour.message_type).toBe("FRBC.LeakageBehaviour");
-        expect(parsedFrbcLeakageBehaviour.message_id).toBe("1");
+        expect(parsedFrbcLeakageBehaviour.message_id).toBe("32141234");
         expect(parsedFrbcLeakageBehaviour.valid_from).toBe("2");
         expect(parsedFrbcLeakageBehaviour.elements).toStrictEqual([
             new FrbcLeakageBehaviourElement({

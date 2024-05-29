@@ -7,7 +7,7 @@ describe('DdbcInstruction', () => {
         const timestamp: string = new Date().toISOString();
 
         const ddbcInstruction = new DdbcInstruction({
-            id: '1',
+            id: '32141234',
             execution_time: timestamp,
             abnormal_condition: false,
             actuator_id: '1',
@@ -18,7 +18,7 @@ describe('DdbcInstruction', () => {
         expect(ddbcInstruction).toBeInstanceOf(DdbcInstruction);
         expect(ddbcInstruction.message_type).toBe('DDBC.Instruction');
         expect(ddbcInstruction.message_id).toBeDefined();
-        expect(ddbcInstruction.id).toBe('1');
+        expect(ddbcInstruction.id).toBe('32141234');
         expect(ddbcInstruction.execution_time).toBe(timestamp);
         expect(ddbcInstruction.abnormal_condition).toBe(false);
         expect(ddbcInstruction.actuator_id).toBe('1');
@@ -30,7 +30,7 @@ describe('DdbcInstruction', () => {
         const timestamp: string = new Date().toISOString();
 
         const ddbcInstruction = new DdbcInstruction({
-            id: '1',
+            id: '32141234',
             execution_time: timestamp,
             abnormal_condition: false,
             actuator_id: '1',
@@ -44,7 +44,7 @@ describe('DdbcInstruction', () => {
         expect(parsed).toBeInstanceOf(DdbcInstruction);
         expect(parsed.message_type).toBe('DDBC.Instruction');
         expect(parsed.message_id).toBeDefined();
-        expect(parsed.id).toBe('1');
+        expect(parsed.id).toBe('32141234');
         expect(parsed.execution_time).toBe(timestamp);
         expect(parsed.abnormal_condition).toBe(false);
         expect(parsed.actuator_id).toBe('1');
