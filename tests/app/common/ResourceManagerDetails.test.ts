@@ -4,7 +4,7 @@ import { parseMessage } from '../../../src/app/services';
 describe('ResourceManagerDetails', () => {
     it('should create a ResourceManagerDetails object', () => {
         const resourceManagerDetails = new ResourceManagerDetails({
-            message_id: "1",
+            message_id: "32141234",
             resource_id: "2",
             roles: [{
                 role: "ENERGY_PRODUCER",
@@ -21,7 +21,7 @@ describe('ResourceManagerDetails', () => {
         });
 
         expect(resourceManagerDetails.message_type).toBe("ResourceManagerDetails");
-        expect(resourceManagerDetails.message_id).toBe("1");
+        expect(resourceManagerDetails.message_id).toBe("32141234");
         expect(resourceManagerDetails.resource_id).toBe("2");
         expect(resourceManagerDetails.roles).toStrictEqual([{
             role: "ENERGY_PRODUCER",
@@ -39,7 +39,7 @@ describe('ResourceManagerDetails', () => {
 
     it('should create a ResourceManagerDetails object after parsing it from a json', () => {
         const resourceManagerDetails = new ResourceManagerDetails({
-            message_id: "1",
+            message_id: "32141234",
             resource_id: "2",
             roles: [{
                 role: "ENERGY_PRODUCER",
@@ -59,7 +59,7 @@ describe('ResourceManagerDetails', () => {
         const parsedResourceManagerDetails = parseMessage(jsonResourceManagerDetails);
 
         expect(parsedResourceManagerDetails.message_type).toBe("ResourceManagerDetails");
-        expect(parsedResourceManagerDetails.message_id).toBe("1");
+        expect(parsedResourceManagerDetails.message_id).toBe("32141234");
         expect(parsedResourceManagerDetails.resource_id).toBe("2");
         expect(parsedResourceManagerDetails.roles).toStrictEqual([{
             role: "ENERGY_PRODUCER",

@@ -6,7 +6,7 @@ describe('FrbcFillLevelTargetProfile', () => {
     it('should create a FrbcFillLevelTargetProfile object', () => {
 
         const frbcFillLevelTargetProfile = new FrbcFillLevelTargetProfile({
-            message_id: "1",
+            message_id: "32141234",
             start_time: "2",
             elements: [new FrbcFillLevelTargetProfileElement( {
                 duration: 3,
@@ -15,7 +15,7 @@ describe('FrbcFillLevelTargetProfile', () => {
         });
 
         expect(frbcFillLevelTargetProfile.message_type).toBe("FRBC.FillLevelTargetProfile");
-        expect(frbcFillLevelTargetProfile.message_id).toBe("1");
+        expect(frbcFillLevelTargetProfile.message_id).toBe("32141234");
         expect(frbcFillLevelTargetProfile.start_time).toBe("2");
         expect(frbcFillLevelTargetProfile.elements).toStrictEqual([new FrbcFillLevelTargetProfileElement( {
             duration: 3,
@@ -34,7 +34,7 @@ describe('FrbcFillLevelTargetProfile', () => {
             });
 
             new FrbcFillLevelTargetProfile({
-            message_id: "1",
+            message_id: "32141234",
             start_time: "2",
             elements: [element, ... new Array(288).fill(element)]
             
@@ -43,7 +43,7 @@ describe('FrbcFillLevelTargetProfile', () => {
 
     it('should create a FrbcFillLevelTargetProfile object after parsing it from a json', () => {
         const frbcFillLevelTargetProfile = new FrbcFillLevelTargetProfile({
-            message_id: "1",
+            message_id: "32141234",
             start_time: "2",
             elements: [new FrbcFillLevelTargetProfileElement( {
                 duration: 3,
@@ -55,7 +55,7 @@ describe('FrbcFillLevelTargetProfile', () => {
         const parsedFrbcFillLevelTargetProfile = parseMessage(jsonFrbcFillLevelTargetProfile);
 
         expect(parsedFrbcFillLevelTargetProfile.message_type).toBe("FRBC.FillLevelTargetProfile");
-        expect(parsedFrbcFillLevelTargetProfile.message_id).toBe("1");
+        expect(parsedFrbcFillLevelTargetProfile.message_id).toBe("32141234");
         expect(parsedFrbcFillLevelTargetProfile.start_time).toBe("2");
         expect(parsedFrbcFillLevelTargetProfile.elements).toStrictEqual([new FrbcFillLevelTargetProfileElement( {
             duration: 3,

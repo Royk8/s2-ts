@@ -4,18 +4,18 @@ import { parseMessage } from '../../../src/app/services';
 describe('SelectControlType', () => {
     it('should create a SelectControlType object', () => {
         const selectControlType = new SelectControlType({
-            message_id: "1",
+            message_id: "32141234",
             control_type: "FILL_RATE_BASED_CONTROL"
         });
 
         expect(selectControlType.message_type).toBe("SelectControlType");
-        expect(selectControlType.message_id).toBe("1");
+        expect(selectControlType.message_id).toBe("32141234");
         expect(selectControlType.control_type).toBe("FILL_RATE_BASED_CONTROL");
     });
 
     it('should create a SelectControlType object after parsing it from a json', () => {
         const selectControlType = new SelectControlType({
-            message_id: "1",
+            message_id: "32141234",
             control_type: "FILL_RATE_BASED_CONTROL"
         });
 
@@ -23,7 +23,7 @@ describe('SelectControlType', () => {
         const parsedSelectControlType = parseMessage(jsonSelectControlType);
 
         expect(parsedSelectControlType.message_type).toBe("SelectControlType");
-        expect(parsedSelectControlType.message_id).toBe("1");
+        expect(parsedSelectControlType.message_id).toBe("32141234");
         expect(parsedSelectControlType.control_type).toBe("FILL_RATE_BASED_CONTROL");
     });
 });

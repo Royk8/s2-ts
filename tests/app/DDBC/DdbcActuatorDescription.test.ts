@@ -23,7 +23,7 @@ describe('DdbcActuatorDescription', () => {
 
         const operation_modes = [operationMode] as [DdbcOperationMode, ...DdbcOperationMode[]];
         const transitions = [new Transition({
-            id: "1",
+            id: "32141234",
             from: "2",
             to: "3",
             start_timers: ["4"],
@@ -34,7 +34,7 @@ describe('DdbcActuatorDescription', () => {
         })];
 
         const timers = [new Timer({
-            id: "1",
+            id: "32141234",
             diagnostic_label: "2",
             duration: 3,
         })];
