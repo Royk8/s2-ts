@@ -28,15 +28,11 @@ export class PpbcPowerSequenceContainer implements PPBC_PowerSequenceContainer {
      * @param {[PpbcPowerSequence, ...PpbcPowerSequence[]]} parameters.power_sequences - List of alternative Sequences where one could be chosen by the CEM.
      */
     constructor({ id, power_sequences }: ConstructorParameters) {
-        this.Validate({ id, power_sequences });
-        
-        this.id = Uuid.generate(id);
-        this.power_sequences = power_sequences;
-    }
-
-    private Validate({ id, power_sequences }: ConstructorParameters): void {
         for(let i = 0; i < power_sequences.length; i++) {
             power_sequences[i] = new PpbcPowerSequence(power_sequences[i]);
         }
+        
+        this.id = Uuid.generate(id);
+        this.power_sequences = power_sequences;
     }
 }

@@ -1,7 +1,8 @@
 export { init } from './app'  //Exports the method to be use in another apps.
 export { WebSocketServerController } from './app/services/WebSocketServerController' //Exports the method to be use in another apps.
 export { WebSocketClientController } from './app/services/WebSocketClientController' //Exports the method to be use in another apps.
-export { parseMessage } from './app/services/MessageParser' //Exports the method to be use in another apps.
+export { parseMessage } from './app/services' //Exports the method to be use in another apps.
+export { messageToJson } from './app/services' //Exports the method to be use in another apps.
 export type { CommodityQuantity } from './schemas/generated' //Exports the method to be use in another apps.
 export type { EnergyManagementRole } from './messages/generated' //Exports the method to be use in another apps.
 
@@ -28,6 +29,7 @@ export { Transition } from './app/common';
 export { FrbcActuatorDescription } from './app/FRBC';
 export { FrbcActuatorStatus } from './app/FRBC';
 export { FrbcFillLevelTargetProfile } from './app/FRBC';
+export { FrbcFillLevelTargetProfileElement } from './app/FRBC';
 export { FrbcInstruction } from './app/FRBC';
 export { FrbcLeakageBehaviour } from './app/FRBC';
 export { FrbcOperationMode } from './app/FRBC';

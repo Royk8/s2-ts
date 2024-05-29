@@ -30,21 +30,13 @@ export class PebcPowerEnvelopeElement implements PEBC_PowerEnvelopeElement {
      * @param {number} constructorParameters.lower_limit - Lower power limit according to the commodity_quantity of the containing PEBC.PowerEnvelope.
      */
     constructor({ duration, upper_limit, lower_limit }: ConstructorParameters) {
-        this.Validate({ duration, upper_limit, lower_limit });
-        this.duration = duration;
-        this.upper_limit = upper_limit;
-        this.lower_limit = lower_limit;
-    }
-
-    /**
-     * Validates the constructor parameters.
-     * 
-     * @param {ConstructorParameters} parameters - The constructor parameters to validate.
-     */
-    public Validate({ duration, upper_limit, lower_limit }: ConstructorParameters): void {
         if (upper_limit < lower_limit) {
             throw new Error("PowerEnvelopeElement: Upper limit must be greater than or equal to lower limit");
         }
         validateDuration(duration);
+
+        this.duration = duration;
+        this.upper_limit = upper_limit;
+        this.lower_limit = lower_limit;
     }
 }

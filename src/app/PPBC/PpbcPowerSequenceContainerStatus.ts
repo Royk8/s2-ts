@@ -42,16 +42,12 @@ export class PpbcPowerSequenceContainerStatus implements PPBC_PowerSequenceConta
      * @param {PPBC_PowerSequenceStatus} parameters.status - Status of the selected PPBC.PowerSequence
      */
     constructor({ power_profile_id, sequence_container_id, selected_sequence_id, progress, status }: ConstructorParameters) {
-        this.Validate({ power_profile_id, sequence_container_id, selected_sequence_id, progress, status });
+        validateDuration(progress);
 
         this.power_profile_id = power_profile_id;
         this.sequence_container_id = sequence_container_id;
         this.selected_sequence_id = selected_sequence_id;
         this.progress = progress;
         this.status = status;
-    }
-
-    private Validate({ power_profile_id, sequence_container_id, selected_sequence_id, progress, status }: ConstructorParameters): void {
-        validateDuration(progress);
     }
 }
