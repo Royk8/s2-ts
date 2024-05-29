@@ -1,5 +1,11 @@
 # s2-typescript
 
+## 0.4.1
+
+### Patch Changes
+
+- edf4cad: Websockets improved
+
 ## 0.4.0
 
 ### Minor Changes
