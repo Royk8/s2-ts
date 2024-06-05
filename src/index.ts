@@ -1,13 +1,15 @@
+//Exports the method to be use in another apps.
+
+//Services
 export { 
     WebSocketServerController,
     WebSocketClientController,
     parseMessage,
     messageToJson
-}  from './app/services' //Exports the method to be use in another apps.
+}  from './app/services';
 
-
-export type { CommodityQuantity }  from './schemas/generated' //Exports the method to be use in another apps.
-export type { EnergyManagementRole }  from './messages/generated' //Exports the method to be use in another apps.
+export type { CommodityQuantity }  from './schemas/generated';
+export type { EnergyManagementRole }  from './messages/generated';
 
 //Common
 //Exports every class exported in the common folder
