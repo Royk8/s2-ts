@@ -1,7 +1,7 @@
 import { FRBC_SystemDescription } from "@messages";
 import { ID } from "@schemas";
 import { FrbcStorageDescription } from "./FrbcStorageDescription";
-import { Timestamp, validateTimestamp } from "../common";
+import { S2Message, Timestamp, validateTimestamp } from "../common";
 import { ActuatorArray } from "./ExtraTypes/ActuatorArray";
 import { Uuid } from "../services/Uuid";
 
@@ -30,7 +30,7 @@ interface ConstructorParameters {
     storage: FrbcStorageDescription;
 }
 
-export class FrbcSystemDescription implements FRBC_SystemDescription {
+export class FrbcSystemDescription implements FRBC_SystemDescription, S2Message {
     message_type: "FRBC.SystemDescription";
     message_id: ID;
     valid_from: Timestamp;

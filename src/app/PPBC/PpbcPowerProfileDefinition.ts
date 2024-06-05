@@ -1,6 +1,6 @@
 import { PPBC_PowerProfileDefinition } from "@messages";
 import { ID } from "@schemas";
-import { Timestamp, validateTimestamp } from "../common";
+import { S2Message, Timestamp, validateTimestamp } from "../common";
 import { Uuid } from "../services/Uuid";
 import { PpbcPowerSequenceContainer } from ".";
 
@@ -30,7 +30,7 @@ interface ConstructorParameters {
     power_sequences_containers: [PpbcPowerSequenceContainer, ...PpbcPowerSequenceContainer[]];
 }
 
-export class PpbcPowerProfileDefinition implements PPBC_PowerProfileDefinition {
+export class PpbcPowerProfileDefinition implements PPBC_PowerProfileDefinition, S2Message {
     message_type: "PPBC.PowerProfileDefinition";
     message_id: ID;
     id: ID;

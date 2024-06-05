@@ -1,7 +1,7 @@
 import { PEBC_EnergyConstraint } from "@messages";
 import { ID, CommodityQuantity } from "@schemas";
 import { Uuid } from "../services/Uuid";
-import { Timestamp, validateTimestamp } from "../common";
+import { S2Message, Timestamp, validateTimestamp } from "../common";
 
 interface ConstructorParameters {
     /**
@@ -34,7 +34,7 @@ interface ConstructorParameters {
     commodity_quantity: CommodityQuantity;
 }
 
-export class PebcEnergyConstraint implements PEBC_EnergyConstraint {
+export class PebcEnergyConstraint implements PEBC_EnergyConstraint, S2Message {
     message_type: "PEBC.EnergyConstraint";
     message_id: ID;
     id: ID;

@@ -1,7 +1,7 @@
 import { DDBC_Instruction } from "@messages";
 import { ID } from "@schemas";
 import { Uuid } from "../services/Uuid";
-import { Timestamp, validateTimestamp } from "../common";
+import { S2Message, Timestamp, validateTimestamp } from "../common";
 
 /**
  * Parameters for constructing a new instance of DdbcInstruction.
@@ -37,7 +37,7 @@ interface ConstructorParameters {
     operation_mode_factor: number;
 }
 
-export class DdbcInstruction implements DDBC_Instruction {
+export class DdbcInstruction implements DDBC_Instruction, S2Message {
     message_type: "DDBC.Instruction";
     message_id: ID;
     id: ID;

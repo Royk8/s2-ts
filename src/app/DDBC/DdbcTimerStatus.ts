@@ -1,7 +1,7 @@
 import { DDBC_TimerStatus } from "@messages";
 import { ID } from "@schemas";
 import { Uuid } from "../services/Uuid";
-import { Timestamp, validateTimestamp } from "../common";
+import { S2Message, Timestamp, validateTimestamp } from "../common";
 
 /**
  * Parameters for constructing a new instance of DdbcTimerStatus.
@@ -25,7 +25,7 @@ interface ConstructorParameters {
     finished_at: Timestamp;
 }
 
-export class DdbcTimerStatus implements DDBC_TimerStatus {
+export class DdbcTimerStatus implements DDBC_TimerStatus, S2Message {
     message_type: "DDBC.TimerStatus";
     message_id: ID;
     timer_id: ID;

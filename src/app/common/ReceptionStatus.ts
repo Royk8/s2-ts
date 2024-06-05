@@ -1,5 +1,6 @@
 import { ReceptionStatus as GenReceptionStatus, ReceptionStatusValues } from "@messages";
 import { ID } from "@schemas";
+import { S2Message } from "./Message";
 
 /**
  * Parameters for constructing a new instance of ReceptionStatus.
@@ -26,7 +27,7 @@ interface ConstructorParameters {
     diagnostic_label?: string;
 }
 
-export class ReceptionStatus implements GenReceptionStatus {
+export class ReceptionStatus implements GenReceptionStatus, S2Message {
     message_type: "ReceptionStatus";
     subject_message_id: ID;
     status: ReceptionStatusValues;
