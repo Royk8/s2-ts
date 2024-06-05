@@ -6,6 +6,8 @@ export { FrbcInstruction } from './FrbcInstruction';
 export { FrbcLeakageBehaviour } from './FrbcLeakageBehaviour';
 export { FrbcLeakageBehaviourElement } from './FrbcLeakageBehaviourElement';
 export { FrbcOperationMode } from './FrbcOperationMode';
+export { FrbcOperationModeElement } from './FrbcOperationModeElement';
+export { FrbcOperationModeFactor } from './FrbcOperationModeFactor';
 export { FrbcStorageDescription } from './FrbcStorageDescription';
 export { FrbcStorageStatus } from './FrbcStorageStatus';
 export { FrbcSystemDescription } from './FrbcSystemDescription';
