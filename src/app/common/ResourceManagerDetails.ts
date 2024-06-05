@@ -1,5 +1,5 @@
 import { Role, ControlType, Currency, CommodityQuantity, ID } from "@schemas";
-import { Duration, validateDuration } from ".";
+import { Duration, Message, validateDuration } from ".";
 import { ResourceManagerDetails as GenResourceManagerDetails } from "@messages";
 import { Uuid } from "../services/Uuid";
 
@@ -70,7 +70,7 @@ interface ConstructorParameters {
     provides_power_measurement_types: [CommodityQuantity] | [CommodityQuantity, CommodityQuantity] | [CommodityQuantity, CommodityQuantity, CommodityQuantity];
 }
 
-export class ResourceManagerDetails implements GenResourceManagerDetails {
+export class ResourceManagerDetails implements GenResourceManagerDetails, Message {
     message_type: "ResourceManagerDetails";
     message_id: string;
     resource_id: string;

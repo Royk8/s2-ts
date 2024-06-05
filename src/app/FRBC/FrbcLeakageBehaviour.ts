@@ -1,7 +1,7 @@
 import { FRBC_LeakageBehaviour } from "@messages";
 import { ID } from "@schemas";
 import { FrbcLeakageBehaviourElement } from "./";
-import { Timestamp, validateTimestamp } from "../common";
+import { Message, Timestamp, validateTimestamp } from "../common";
 import { Uuid } from "../services/Uuid";
 
 /**
@@ -22,7 +22,7 @@ interface ConstructorParameters {
     elements: [FrbcLeakageBehaviourElement, ...FrbcLeakageBehaviourElement[]];
 }
 
-export class FrbcLeakageBehaviour implements FRBC_LeakageBehaviour {
+export class FrbcLeakageBehaviour implements FRBC_LeakageBehaviour, Message {
     message_type: "FRBC.LeakageBehaviour";
     message_id: ID;
     valid_from: Timestamp;

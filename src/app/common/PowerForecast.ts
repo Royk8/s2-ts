@@ -1,7 +1,7 @@
 import { PowerForecast as GenPowerForecast } from "@messages";
 import { PowerForecastElement } from "./PowerForecastElement";
 import { ID } from "@schemas";
-import { Timestamp, validateTimestamp } from "./";
+import { Message, Timestamp, validateTimestamp } from "./";
 import { Uuid } from "../services/Uuid";
 
 /**
@@ -25,7 +25,7 @@ interface ConstructorParameters {
     elements: [PowerForecastElement, ...PowerForecastElement[]];
 }
 
-export class PowerForecast implements GenPowerForecast {
+export class PowerForecast implements GenPowerForecast, Message {
     message_type: "PowerForecast";
     message_id: ID;
     start_time: Timestamp;

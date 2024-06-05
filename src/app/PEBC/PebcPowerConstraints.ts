@@ -3,7 +3,7 @@ import { ID } from "@schemas";
 import { PebcAllowedLimitRange } from ".";
 import { Uuid } from "../services/Uuid";
 import { PEBC_PowerEnvelopeConsequenceType } from "src/messages/generated/PEBC.PowerConstraints";
-import { Timestamp, validateTimestamp } from "../common";
+import { Message, Timestamp, validateTimestamp } from "../common";
 
 interface ConstructorParameters {
     /**
@@ -35,7 +35,7 @@ interface ConstructorParameters {
     allowed_limit_ranges: [PebcAllowedLimitRange, PebcAllowedLimitRange, ...PebcAllowedLimitRange[]];
 }
 
-export class PebcPowerConstraints implements PEBC_PowerConstraints {
+export class PebcPowerConstraints implements PEBC_PowerConstraints, Message {
     message_type: "PEBC.PowerConstraints";
     message_id: ID;
     id: ID;

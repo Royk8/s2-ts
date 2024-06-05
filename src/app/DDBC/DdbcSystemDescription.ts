@@ -1,7 +1,7 @@
 import { DDBC_SystemDescription } from "@messages";
 import { ID } from "@schemas";
 import { Uuid } from "../services/Uuid";
-import { NumberRange, Timestamp, validateTimestamp } from "../common";
+import { Message, NumberRange, Timestamp, validateTimestamp } from "../common";
 import { ActuatorArray } from "./ExtraTypes";
 import { DdbcActuatorDescription } from "./DdbcActuatorDescription";
 
@@ -31,7 +31,7 @@ interface ConstructorParameters {
     provides_average_demand_rate_forecast: boolean;
 }
 
-export class DdbcSystemDescription implements DDBC_SystemDescription {
+export class DdbcSystemDescription implements DDBC_SystemDescription, Message {
     message_type: "DDBC.SystemDescription";
     message_id: ID;
     valid_from: Timestamp;

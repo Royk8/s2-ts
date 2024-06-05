@@ -1,6 +1,6 @@
 import { InstructionStatusUpdate as GenInstructionStatusUpdate, InstructionStatus} from "@messages";
 import { ID } from "@schemas";
-import { Timestamp, validateTimestamp } from "./";
+import { Message, Timestamp, validateTimestamp } from "./";
 import { Uuid } from "../services/Uuid";
 
 /**
@@ -25,7 +25,7 @@ interface ConstructorParameters {
     timestamp: Timestamp;
 }
 
-export class InstructionStatusUpdate implements GenInstructionStatusUpdate {
+export class InstructionStatusUpdate implements GenInstructionStatusUpdate, Message {
     message_type: "InstructionStatusUpdate";
     message_id: ID;
     instruction_id: ID;

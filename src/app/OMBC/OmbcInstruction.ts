@@ -1,7 +1,7 @@
 import { OMBC_Instruction } from "@messages";
 import { ID } from "@schemas";
 import { Uuid } from "../services/Uuid";
-import { Timestamp, validateTimestamp } from "../common";
+import { Message, Timestamp, validateTimestamp } from "../common";
 
 /**
  * Constructor parameters for the OmbcInstruction class.
@@ -36,7 +36,7 @@ interface ConstructorParameters {
 /**
  * Class representing an OMBC Instruction.
  */
-export class OmbcInstruction implements OMBC_Instruction {
+export class OmbcInstruction implements OMBC_Instruction, Message {
     message_type: "OMBC.Instruction";
     message_id: ID;
     id: ID;

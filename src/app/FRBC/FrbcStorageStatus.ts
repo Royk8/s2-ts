@@ -1,6 +1,7 @@
 import { FRBC_StorageStatus } from "@messages";
 import { ID } from "@schemas";
 import { Uuid } from "../services/Uuid";
+import { Message } from "../common";
 
 /**
  * Parameters for constructing a new instance of FrbcStorageStatus.
@@ -16,7 +17,7 @@ interface ConstructorParameters {
     present_fill_level: number;
 }
 
-export class FrbcStorageStatus implements FRBC_StorageStatus {
+export class FrbcStorageStatus implements FRBC_StorageStatus, Message {
     message_type: "FRBC.StorageStatus";
     message_id: ID;
     present_fill_level: number;

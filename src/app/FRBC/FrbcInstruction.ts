@@ -1,7 +1,7 @@
 import { FRBC_Instruction } from "@messages";
 import { ID } from "@schemas";
 import { FrbcOperationModeFactor, validateOperationModeFactor } from "./FrbcOperationModeFactor";
-import { Timestamp, validateTimestamp } from "../common";
+import { Message, Timestamp, validateTimestamp } from "../common";
 import { Uuid } from "../services/Uuid";
 
 /**
@@ -38,7 +38,7 @@ interface ConstructorParameters {
     abnormal_condition: boolean;
 }
 
-export class FrbcInstruction implements FRBC_Instruction {
+export class FrbcInstruction implements FRBC_Instruction, Message {
     message_type: "FRBC.Instruction";
     message_id: ID;
     id: ID;

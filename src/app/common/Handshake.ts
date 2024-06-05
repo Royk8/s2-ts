@@ -1,6 +1,7 @@
 import { Handshake as GenHandshake, EnergyManagementRole } from "@messages";
 import { ID } from "@schemas";
 import { Uuid } from "../services/Uuid";
+import { Message } from "./Message";
 
 /**
  * Parameters for constructing a new instance of the Handshake.
@@ -26,7 +27,7 @@ interface ConstructorParameters {
     supported_protocol_versions?: [string, ...string[]];
   }
 
-export class Handshake implements GenHandshake {
+export class Handshake implements GenHandshake, Message {
     message_type: 'Handshake';
     message_id: ID;
     role: EnergyManagementRole;

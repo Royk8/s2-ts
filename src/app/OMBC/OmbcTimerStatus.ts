@@ -1,7 +1,7 @@
 import { OMBC_TimerStatus } from "@messages";
 import { ID } from "@schemas";
 import { Uuid } from "../services/Uuid";
-import { Timestamp, validateTimestamp } from "../common";
+import { Message, Timestamp, validateTimestamp } from "../common";
 
 interface ConstructorParameters {
     /**
@@ -19,7 +19,7 @@ interface ConstructorParameters {
     finished_at: Timestamp;
 }
 
-export class OmbcTimerStatus implements OMBC_TimerStatus {
+export class OmbcTimerStatus implements OMBC_TimerStatus, Message {
     message_type: "OMBC.TimerStatus";
     message_id: ID;
     timer_id: ID;

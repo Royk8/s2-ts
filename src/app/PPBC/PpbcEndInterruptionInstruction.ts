@@ -1,6 +1,6 @@
 import { PPBC_EndInterruptionInstruction } from "@messages";
 import { ID } from "@schemas";
-import { Timestamp, validateTimestamp } from "../common";
+import { Message, Timestamp, validateTimestamp } from "../common";
 import { Uuid } from "../services/Uuid";
 
 interface ConstructorParameters {
@@ -34,7 +34,7 @@ interface ConstructorParameters {
     abnormal_condition: boolean;
 }
 
-export class PpbcEndInterruptionInstruction implements PPBC_EndInterruptionInstruction {
+export class PpbcEndInterruptionInstruction implements PPBC_EndInterruptionInstruction, Message {
     message_type: "PPBC.EndInterruptionInstruction";
     message_id: ID;
     id: ID;

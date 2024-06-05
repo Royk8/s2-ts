@@ -1,6 +1,6 @@
 import { DDBC_AverageDemandRateForecast } from "@messages";
 import { DdbcAverageDemandRateForecastElement } from ".";
-import { Timestamp, validateTimestamp } from "../common";
+import { Message, Timestamp, validateTimestamp } from "../common";
 import { ID } from "@schemas";
 import { Uuid } from "../services/Uuid";
 
@@ -25,7 +25,7 @@ interface ConstructorParameters {
     elements: [DdbcAverageDemandRateForecastElement, ...DdbcAverageDemandRateForecastElement[]];
 }
 
-export class DdbcAverageDemandRateForecast implements DDBC_AverageDemandRateForecast {
+export class DdbcAverageDemandRateForecast implements DDBC_AverageDemandRateForecast, Message {
     message_type: "DDBC.AverageDemandRateForecast";
     message_id: ID;
     start_time: Timestamp;

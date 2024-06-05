@@ -1,6 +1,7 @@
 import { SelectControlType as GenSelectControlType, ControlType } from "@messages";
 import { ID } from "@schemas";
 import { Uuid } from "../services/Uuid";
+import { Message } from "./Message";
 
 /**
  * Parameters for constructing a new instance of SelectControlType.
@@ -16,7 +17,7 @@ interface ConstructorParameters {
     control_type: ControlType;
 }
 
-export class SelectControlType implements GenSelectControlType {
+export class SelectControlType implements GenSelectControlType, Message {
     message_type: "SelectControlType";
     message_id: ID;
     control_type: ControlType;
