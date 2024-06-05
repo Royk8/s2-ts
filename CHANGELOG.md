@@ -1,5 +1,11 @@
 # s2-typescript
 
+## 0.5.0
+
+### Minor Changes
+
+- 7539417: S2Message interface implemented to add more clarity to what are message object and what not.
+
 ## 0.4.2
 
 ### Patch Changes
