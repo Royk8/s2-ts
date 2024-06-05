@@ -31,7 +31,8 @@ export {
     SelectControlType,
     SessionRequest,
     Timer,
-    Transition 
+    Transition,
+    S2Message
 } from './app/common';
 
 
