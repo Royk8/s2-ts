@@ -1,4 +1,5 @@
 import { WebSocket } from 'ws';
+import { messageToJson } from './MessageParser';
 
 export type MessageReceiveCallback = (message: string) => void;
 
@@ -38,7 +39,10 @@ export class WebSocketClientController {
         });
     }
 
-    public SendMessage(message: string): void {
+    public SendMessage(message: string | any): void {
+        if (typeof message !== 'string') {
+            message = messageToJson(message);
+        }
         console.log(`CLIENT: Sending message => ${message}`);
         if (this.isConnected) {
             this.ws.send(message);
@@ -47,27 +51,4 @@ export class WebSocketClientController {
             this.messageQueue.push(message);
         }
     }
-
-    // constructor(url: string, onMessage?: MessageReceiveCallback) {
-    //     this.ws = new WebSocket(url);
-    //     this.onMessage = onMessage;
-
-    //     this.ws.on('error', console.error);
-    //     this.ws.on('open', () => {
-    //         console.log('Connected');
-    //     });
-
-    //     this.ws.on('message', message => {
-    //         this.onMessage(message);
-    //     });
-
-    //     this.ws.on('close', () => {
-    //         console.log('Disconnected');
-    //     });
-    // }
-
-    // public SendMessage(message: string) : void {
-    //     console.log(`Sending message => ${message}`);
-    //     this.ws.send(message);
-    // }
 }
