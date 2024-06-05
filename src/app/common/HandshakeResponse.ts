@@ -1,7 +1,7 @@
 import { HandshakeResponse as GenHandshakeResponse } from "@messages";
 import { ID } from "@schemas";
 import { Uuid } from "../services/Uuid";
-import { Message } from "./Message";
+import { S2Message } from "./Message";
 
 interface ConstructorParameters {
     /**
@@ -14,7 +14,7 @@ interface ConstructorParameters {
     selected_protocol_version: string;
 };
 
-export class HandshakeResponse implements GenHandshakeResponse, Message {
+export class HandshakeResponse implements GenHandshakeResponse, S2Message {
     message_type: "HandshakeResponse";
     message_id: ID;
     selected_protocol_version: string;

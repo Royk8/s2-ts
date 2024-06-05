@@ -1,6 +1,6 @@
 import { FRBC_UsageForecast } from "@messages";
 import { ID } from "@schemas";
-import { Message, Timestamp, validateTimestamp } from "../common";
+import { S2Message, Timestamp, validateTimestamp } from "../common";
 import { FrbcUsageForecastElement } from "./FrbcUsageForecastElement";
 import { Uuid } from "../services/Uuid";
 
@@ -25,7 +25,7 @@ interface ConstructorParameters {
     elements: [FrbcUsageForecastElement, ...FrbcUsageForecastElement[]];
 }
 
-export class FrbcUsageForecast implements FRBC_UsageForecast, Message {
+export class FrbcUsageForecast implements FRBC_UsageForecast, S2Message {
     message_type: "FRBC.UsageForecast";
     message_id: ID;
     start_time: Timestamp;

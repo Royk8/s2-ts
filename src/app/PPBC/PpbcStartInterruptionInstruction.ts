@@ -1,6 +1,6 @@
 import { PPBC_StartInterruptionInstruction } from "@messages";
 import { ID } from "@schemas";
-import { Message, Timestamp, validateTimestamp } from "../common";
+import { S2Message, Timestamp, validateTimestamp } from "../common";
 import { Uuid } from "../services/Uuid";
 
 interface ConstructorParameters {
@@ -34,7 +34,7 @@ interface ConstructorParameters {
     abnormal_condition: boolean;
 }
 
-export class PpbcStartInterruptionInstruction implements PPBC_StartInterruptionInstruction, Message {
+export class PpbcStartInterruptionInstruction implements PPBC_StartInterruptionInstruction, S2Message {
     message_type: "PPBC.StartInterruptionInstruction";
     message_id: ID;
     id: ID;

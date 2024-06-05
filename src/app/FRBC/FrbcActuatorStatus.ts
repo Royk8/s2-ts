@@ -1,7 +1,7 @@
 import { FRBC_ActuatorStatus } from "@messages";
 import { ID } from "@schemas";
 import { validateOperationModeFactor, FrbcOperationModeFactor } from "./FrbcOperationModeFactor";
-import { Message, Timestamp, validateTimestamp } from "../common";
+import { S2Message, Timestamp, validateTimestamp } from "../common";
 import { Uuid } from "../services/Uuid";
 
 /**
@@ -34,7 +34,7 @@ interface ConstructorParameters {
     transition_timestamp?: Timestamp;
 }
 
-export class FrbcActuatorStatus implements FRBC_ActuatorStatus, Message {
+export class FrbcActuatorStatus implements FRBC_ActuatorStatus, S2Message {
     message_type: "FRBC.ActuatorStatus";
     message_id: ID;
     actuator_id: ID;

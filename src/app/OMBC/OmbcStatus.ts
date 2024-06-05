@@ -1,7 +1,7 @@
 import { OMBC_Status } from "@messages";
 import { ID } from "@schemas";
 import { Uuid } from "../services/Uuid";
-import { Message, Timestamp, validateTimestamp } from "../common";
+import { S2Message, Timestamp, validateTimestamp } from "../common";
 
 /**
  * Constructor parameters for the OmbcStatus class.
@@ -35,7 +35,7 @@ interface ConstructorParameters {
 /**
  * Class representing an OMBC Status.
  */
-export class OmbcStatus implements OMBC_Status, Message {
+export class OmbcStatus implements OMBC_Status, S2Message {
     message_type: "OMBC.Status";
     message_id: ID;
     active_operation_mode_id: ID;

@@ -19,4 +19,4 @@ export type { Duration } from './Duration';
 export { validateDuration } from './Duration';
 export type { Timestamp } from './Timestamp';
 export { validateTimestamp } from './Timestamp';
-export { Message } from './Message';
+export { S2Message } from './Message';

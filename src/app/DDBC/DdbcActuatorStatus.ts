@@ -1,7 +1,7 @@
 import { DDBC_ActuatorStatus } from '@messages';
 import { ID } from '@schemas';
 import { Uuid } from '../services/Uuid';
-import { Message, Timestamp, validateTimestamp } from '../common';
+import { S2Message, Timestamp, validateTimestamp } from '../common';
 
 /**
  * Parameters for constructing a new instance of DdbcActuatorStatus.
@@ -36,7 +36,7 @@ interface ConstructorParameters {
     transition_timestamp?: Timestamp;
 }
 
-export class DdbcActuatorStatus implements DDBC_ActuatorStatus, Message {
+export class DdbcActuatorStatus implements DDBC_ActuatorStatus, S2Message {
     message_type: 'DDBC.ActuatorStatus';
     message_id: ID;
     actuator_id: ID;

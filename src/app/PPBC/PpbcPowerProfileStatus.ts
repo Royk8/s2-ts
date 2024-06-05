@@ -2,7 +2,7 @@ import { PPBC_PowerProfileStatus } from "@messages";
 import { ID } from "@schemas";
 import { Uuid } from "../services/Uuid";
 import { PpbcPowerSequenceContainerStatus } from ".";
-import { Message } from "../common";
+import { S2Message } from "../common";
 
 interface ConstructorParameters {
     /**
@@ -18,7 +18,7 @@ interface ConstructorParameters {
     sequence_container_status: [PpbcPowerSequenceContainerStatus, ...PpbcPowerSequenceContainerStatus[]];
 }
 
-export class PpbcPowerProfileStatus implements PPBC_PowerProfileStatus, Message {
+export class PpbcPowerProfileStatus implements PPBC_PowerProfileStatus, S2Message {
     message_type: "PPBC.PowerProfileStatus";
     message_id: ID;
     sequence_container_status: [PpbcPowerSequenceContainerStatus, ...PpbcPowerSequenceContainerStatus[]];

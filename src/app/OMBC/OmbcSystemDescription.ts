@@ -1,7 +1,7 @@
 import { OMBC_SystemDescription } from "@messages";
 import { ID } from "@schemas";
 import { Uuid } from "../services/Uuid";
-import { Timestamp, validateTimestamp, Transition, Timer, Message } from "../common";
+import { Timestamp, validateTimestamp, Transition, Timer, S2Message } from "../common";
 import { OmbcOperationMode } from ".";
 
 interface ConstructorParameters {
@@ -40,7 +40,7 @@ interface ConstructorParameters {
 /**
  * Class representing an OMBC System Description.
  */
-export class OmbcSystemDescription implements OMBC_SystemDescription, Message {
+export class OmbcSystemDescription implements OMBC_SystemDescription, S2Message {
     message_type: "OMBC.SystemDescription";
     message_id: ID;
     valid_from: Timestamp;

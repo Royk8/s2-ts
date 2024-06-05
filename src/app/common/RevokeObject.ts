@@ -1,7 +1,7 @@
 import { RevokeObject as GenRevokeObject, RevokableObjects } from "@messages";
 import { ID } from "@schemas";
 import { Uuid } from "../services/Uuid";
-import { Message } from "./Message";
+import { S2Message } from "./Message";
 
 /**
  * Parameters for constructing a new instance of RevokeObject.
@@ -21,7 +21,7 @@ interface ConstructorParameters {
     object_id: ID;
 }
 
-export class RevokeObject implements GenRevokeObject, Message {
+export class RevokeObject implements GenRevokeObject, S2Message {
     message_type: "RevokeObject";
     message_id: ID;
     object_type: RevokableObjects;

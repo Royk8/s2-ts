@@ -1,6 +1,6 @@
 import { FRBC_TimerStatus } from "@messages";
 import { ID } from "@schemas";
-import { Message, Timestamp, validateTimestamp } from "../common";
+import { S2Message, Timestamp, validateTimestamp } from "../common";
 import { Uuid } from "../services/Uuid";
 
 /**
@@ -25,7 +25,7 @@ interface ConstructorParameters {
     finished_at: Timestamp;
 }
 
-export class FrbcTimerStatus implements FRBC_TimerStatus, Message {
+export class FrbcTimerStatus implements FRBC_TimerStatus, S2Message {
     message_type: "FRBC.TimerStatus";
     message_id: ID;
     timer_id: ID;
