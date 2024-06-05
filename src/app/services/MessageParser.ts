@@ -1,4 +1,5 @@
-import * as messages from '../common';
+import { S2Message } from '../common';
+import * as common from '../common';
 import * as ddbc from '../DDBC';
 import * as frbc from '../FRBC';
 import * as ombc from '../OMBC';
@@ -9,18 +10,18 @@ import * as ppbc from '../PPBC';
 // The message_type is used to determine which class to instantiate
 // Lets start with a mapping of message_type to class
 const messageTypeToClass = {
-    'Handshake': messages.Handshake,
-    'HandshakeResponse': messages.HandshakeResponse,
-    'InstructionStatusUpdate': messages.InstructionStatusUpdate,
-    'PowerForecast': messages.PowerForecast,
-    'PowerMeasurement': messages.PowerMeasurement,
-    'ReceptionStatus': messages.ReceptionStatus,
-    'ResourceManagerDetails': messages.ResourceManagerDetails,
-    'RevokeObject': messages.RevokeObject,
-    'SelectControlType': messages.SelectControlType,
-    'SessionRequest': messages.SessionRequest,
-    'Timer': messages.Timer,
-    'Transition': messages.Transition,
+    'Handshake': common.Handshake,
+    'HandshakeResponse': common.HandshakeResponse,
+    'InstructionStatusUpdate': common.InstructionStatusUpdate,
+    'PowerForecast': common.PowerForecast,
+    'PowerMeasurement': common.PowerMeasurement,
+    'ReceptionStatus': common.ReceptionStatus,
+    'ResourceManagerDetails': common.ResourceManagerDetails,
+    'RevokeObject': common.RevokeObject,
+    'SelectControlType': common.SelectControlType,
+    'SessionRequest': common.SessionRequest,
+    'Timer': common.Timer,
+    'Transition': common.Transition,
 
     'DDBC.ActuatorStatus': ddbc.DdbcActuatorStatus,
     'DDBC.AverageDemandRateForecast': ddbc.DdbcAverageDemandRateForecast,
@@ -54,10 +55,19 @@ const messageTypeToClass = {
     'PPBC.StartInterruptionInstruction': ppbc.PpbcStartInterruptionInstruction,
 }
 
-// Now we can use the message_type to create the object
+/**
+ * Parses a Json string S2Message and returns the corresponding class instance.
+ * 
+ * @param {any} json - Json string to parse.
+ * @returns {any} - The corresponding class instance of an S2Message.
+ */
 export function parseMessage(json: any): any {
     const jsonObject = JSON.parse(json);
     const messageType = jsonObject.message_type;
+
+    if (!messageType)
+        throw new Error("Unknown message type. The object doesn't have a message_type property, hence it's not a S2Message.");
+
     const messageClass = messageTypeToClass[messageType];
     if (messageClass) {
         return new messageClass(jsonObject);
@@ -66,8 +76,13 @@ export function parseMessage(json: any): any {
     return null;
 }
 
-// This function takes an instance of a message class and converts it to a Json string
-export function messageToJson(message: any): string {
+/**
+ * Parses a S2Message object and returns the corresponding Json string.
+ * 
+ * @param {S2Message} message - Instance of a S2Message class.
+ * @returns {string} - Json string to parse.
+ */
+export function messageToJson(message: S2Message): string {
     if(message.message_type && messageTypeToClass[message.message_type]) {
         return JSON.stringify(message);
     }

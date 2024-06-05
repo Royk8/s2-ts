@@ -1,48 +1,5 @@
-// import { WebSocketServer } from 'ws';
-
-
-// export type MessageReceiveCallback = (message: string) => void;
-
-// export class WebSocketServerController {
-//     wss: WebSocketServer;
-//     onMessage: MessageReceiveCallback;
-//     constructor(port: number = 8000, onMessage?: MessageReceiveCallback) {
-//         this.wss = new WebSocketServer({ port: port });
-//         this.onMessage = onMessage;
-
-//         this.wss.on('error', console.error);
-
-
-//         this.wss.on('message', message => {
-//             this.onMessage(message);
-//             this.BroadcastMessage("Gracias por tu mensaje");
-//         });
-
-//         console.log('SERVER: WebSocketServerController initialized');
-//         this.BroadcastMessage('SERVER: Welcome to WebSocketServerController');
-//     }
-
-//     public AddMessageOnConection(message: string) : void {
-//         this.wss.on('connection', ws => {
-//             console.log(message);
-//             this.BroadcastMessage(message);
-//         });
-//     }
-    
-//     public BroadcastMessage(message: string) : void {
-//         let i = 0;
-//         this.wss.clients.forEach(client => {
-//             if (client.readyState === 1) {
-//                 client.send(message);
-//                 i++;
-//                 console.log(`SERVER: Sent message to ${i} clients`);
-//             }
-//         });
-//     };
-// }
-
-
 import { WebSocketServer, WebSocket } from 'ws';
+import { messageToJson } from './MessageParser';
 
 export type ClientMessageCallback = (client: WebSocket, message: string) => void;
 export type ClientCallback = (client: WebSocket) => void;
@@ -85,7 +42,10 @@ export class WebSocketServerController {
         this.wss.on('error', console.error);
     }
 
-    public broadcastMessage(message: string): void {
+    public broadcastMessage(message: string | any): void {
+        if (typeof message !== 'string') {
+            message = messageToJson(message);
+        }
         this.wss.clients.forEach(client => {
             if (client.readyState === WebSocket.OPEN) {
                 console.log(`Broadcasting message => ${message}`);

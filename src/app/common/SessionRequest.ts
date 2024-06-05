@@ -1,6 +1,7 @@
 import { SessionRequest as GenSessionRequest, SessionRequestType } from "@messages";
 import { ID } from "@schemas";
 import { Uuid } from "../services/Uuid";
+import { S2Message } from "./Message";
 
 /**
  * Parameters for constructing a new instance of SessionRequest.
@@ -20,7 +21,7 @@ interface ConstructorParameters {
     diagnostic_label?: string;
 }
 
-export class SessionRequest implements GenSessionRequest {
+export class SessionRequest implements GenSessionRequest, S2Message {
     message_type: "SessionRequest";
     message_id: ID;
     request: SessionRequestType;

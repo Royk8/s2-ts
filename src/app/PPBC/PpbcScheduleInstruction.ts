@@ -1,6 +1,6 @@
 import { PPBC_ScheduleInstruction } from "@messages";
 import { ID } from "@schemas";
-import { Timestamp, validateTimestamp } from "../common";
+import { S2Message, Timestamp, validateTimestamp } from "../common";
 import { Uuid } from "../services/Uuid";
 
 interface ConstructorParameters {
@@ -34,7 +34,7 @@ interface ConstructorParameters {
     abnormal_condition: boolean;
 }
 
-export class PpbcScheduleInstruction implements PPBC_ScheduleInstruction {
+export class PpbcScheduleInstruction implements PPBC_ScheduleInstruction, S2Message {
     message_type: "PPBC.ScheduleInstruction";
     message_id: ID;
     id: ID;

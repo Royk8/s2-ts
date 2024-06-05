@@ -1,7 +1,7 @@
 import { PEBC_Instruction } from "@messages";
 import { ID } from "@schemas";
 import { Uuid } from "../services/Uuid";
-import { Timestamp, validateTimestamp } from "../common";
+import { S2Message, Timestamp, validateTimestamp } from "../common";
 import { PowerEnvelopeArray } from "./ExtraTypes";
 import { PebcPowerEnvelope } from "./PebcPowerEnvelope";
 
@@ -35,7 +35,7 @@ interface ConstructorParameters {
     power_envelopes: PowerEnvelopeArray;
 }
 
-export class PebcInstruction implements PEBC_Instruction {
+export class PebcInstruction implements PEBC_Instruction, S2Message {
     message_type: "PEBC.Instruction";
     message_id: ID;
     id: ID;
