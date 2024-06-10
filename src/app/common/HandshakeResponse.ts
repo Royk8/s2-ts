@@ -1,7 +1,7 @@
 import { HandshakeResponse as GenHandshakeResponse } from "@messages";
 import { ID } from "@schemas";
 import { Uuid } from "../services/Uuid";
-import { S2Message } from "./Message";
+import { S2Message } from "./S2Message";
 
 interface ConstructorParameters {
     /**

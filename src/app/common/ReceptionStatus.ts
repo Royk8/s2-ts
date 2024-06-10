@@ -1,6 +1,6 @@
 import { ReceptionStatus as GenReceptionStatus, ReceptionStatusValues } from "@messages";
 import { ID } from "@schemas";
-import { S2Message } from "./Message";
+import { S2Message } from "./S2Message";
 
 /**
  * Parameters for constructing a new instance of ReceptionStatus.

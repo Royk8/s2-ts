@@ -1,7 +1,7 @@
 import { Handshake as GenHandshake, EnergyManagementRole } from "@messages";
 import { ID } from "@schemas";
 import { Uuid } from "../services/Uuid";
-import { S2Message } from "./Message";
+import { S2Message } from "./S2Message";
 
 /**
  * Parameters for constructing a new instance of the Handshake.
