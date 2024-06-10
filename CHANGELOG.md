@@ -1,5 +1,11 @@
 # s2-typescript
 
+## 0.5.1
+
+### Patch Changes
+
+- 22c0bf9: Changing ownership
+
 ## 0.5.0
 
 ### Minor Changes
