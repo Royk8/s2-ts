@@ -1,5 +1,17 @@
 # s2-typescript
 
+## 0.6.0
+
+### Minor Changes
+
+- bafe07b: NumberRange and PowerRange can be created sending only the values as parameters. CommodityQuantity is now an enum.
+- a20f5ce: NumberRange and PowerRange now can be created sending both values as parameters instead of a full object with the keys and values. CommodityQuantity is now an enum.
+
+### Patch Changes
+
+- 1089ee0: Fixing CI issues
+- a75bc5a: CI fixed.
+
 ## 0.5.1
 
 ### Patch Changes
