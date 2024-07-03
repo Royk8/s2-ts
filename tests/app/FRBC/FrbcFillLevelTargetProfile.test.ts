@@ -24,6 +24,27 @@ describe('FrbcFillLevelTargetProfile', () => {
 
     });
 
+    it('should create a FrbcFillLevelTargetProfile object', () => {
+
+        const frbcFillLevelTargetProfile = new FrbcFillLevelTargetProfile({
+            message_id: "32141234",
+            start_time: "2",
+            elements: [new FrbcFillLevelTargetProfileElement( {
+                duration: 3,
+                fill_level_range: new NumberRange(4,5)
+            })]
+        });
+
+        expect(frbcFillLevelTargetProfile.message_type).toBe("FRBC.FillLevelTargetProfile");
+        expect(frbcFillLevelTargetProfile.message_id).toBe("32141234");
+        expect(frbcFillLevelTargetProfile.start_time).toBe("2");
+        expect(frbcFillLevelTargetProfile.elements).toStrictEqual([new FrbcFillLevelTargetProfileElement( {
+            duration: 3,
+            fill_level_range: new NumberRange({ start_of_range: 4, end_of_range: 5 })
+        })]);
+
+    });
+
     it('should throw an error if the size of the elements is greater than 288', () => {
 
         expect(() => {
@@ -47,7 +68,7 @@ describe('FrbcFillLevelTargetProfile', () => {
             start_time: "2",
             elements: [new FrbcFillLevelTargetProfileElement( {
                 duration: 3,
-                fill_level_range: new NumberRange({ start_of_range: 4, end_of_range: 5 })
+                fill_level_range: new NumberRange(4,5)
             })]
         });
 
