@@ -32,7 +32,25 @@ export class PowerRange implements GenPowerRange {
      * @param {CommodityQuantity} params.commodity_quantity - The power quantity the values refer to.
      * @throws {Error} If start_of_range is greater than end_of_range.
      */
-    constructor({ start_of_range, end_of_range, commodity_quantity }: ConstructorParameters) {
+    constructor(start_of_range: number, end_of_range: number, commodity_quantity: CommodityQuantity);
+    constructor(params: ConstructorParameters);
+    constructor(paramsOrStart : ConstructorParameters| number, endOfRange ?: number, commodityQuantity ?: CommodityQuantity) {
+        let start_of_range: number;
+        let end_of_range: number;
+        let commodity_quantity: CommodityQuantity;
+
+        if (typeof paramsOrStart === "number" && typeof endOfRange === "number" && typeof commodityQuantity === "string") {
+            start_of_range = paramsOrStart;
+            end_of_range = endOfRange;
+            commodity_quantity = commodityQuantity;
+        } else if (typeof paramsOrStart === "object" && typeof endOfRange === "undefined" && typeof commodityQuantity === "undefined") {
+            start_of_range = paramsOrStart.start_of_range;
+            end_of_range = paramsOrStart.end_of_range;
+            commodity_quantity = paramsOrStart.commodity_quantity;
+        } else {
+            throw new Error("Invalid constructor arguments");
+        }
+
         if (start_of_range > end_of_range) {
             throw new Error("start_of_range must be less than or equal to end_of_range");
         }

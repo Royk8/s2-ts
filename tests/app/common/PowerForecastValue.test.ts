@@ -1,4 +1,5 @@
 import { PowerForecastValue } from '../../../src/app/common/PowerForecastValue';
+import { CommodityQuantity } from '../../../src/app/common';
 
 describe('PowerForecastValue', () => {
     it('should create a PowerForecastValue object', () => {
@@ -30,6 +31,16 @@ describe('PowerForecastValue', () => {
         expect(powerForecastValue.value_lower_68PPR).toBe(170);
         expect(powerForecastValue.value_lower_95PPR).toBe(160);
         expect(powerForecastValue.value_lower_limit).toBe(150);
+        expect(powerForecastValue.value_expected).toBe(100);
+    });
+
+    it('should create a PowerForecastValue object', () => {
+        const powerForecastValue = new PowerForecastValue({
+            commodity_quantity: CommodityQuantity.ELECTRIC_POWER_L1,
+            value_expected: 100,
+        });
+
+        expect(powerForecastValue.commodity_quantity).toBe("ELECTRIC.POWER.L1");
         expect(powerForecastValue.value_expected).toBe(100);
     });
 });

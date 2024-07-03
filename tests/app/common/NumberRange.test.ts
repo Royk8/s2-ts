@@ -20,3 +20,12 @@ describe('NumberRange', () => {
         }).toThrow('start_of_range must be less than or equal to end_of_range');
     });
 });
+
+describe('NumberRange', () => {
+    it ('should create a NumberRange object receiving only', () => {
+        const numberRange = new NumberRange(1, 10)
+
+        expect(numberRange.start_of_range).toBe(1);
+        expect(numberRange.end_of_range).toBe(10);
+    });
+});

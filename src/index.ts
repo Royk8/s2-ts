@@ -8,12 +8,12 @@ export {
     messageToJson
 }  from './app/services';
 
-export type { CommodityQuantity }  from './schemas/generated';
 export type { EnergyManagementRole }  from './messages/generated';
 
 //Common
 //Exports every class exported in the common folder
 export { 
+    CommodityQuantity,
     Duration, 
     Handshake,
     HandshakeResponse, 
